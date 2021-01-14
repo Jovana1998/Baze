@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30711.63
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsSat", "WindowsFormsSat\WindowsFormsSat.csproj", "{4C53A1BB-A55E-4671-9DDD-6E7E17ECC13A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayerSat", "DataLayerSat\DataLayerSat.csproj", "{70AA62A0-1E6A-4546-A6C9-1F58ED4DDB68}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4C53A1BB-A55E-4671-9DDD-6E7E17ECC13A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C53A1BB-A55E-4671-9DDD-6E7E17ECC13A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C53A1BB-A55E-4671-9DDD-6E7E17ECC13A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C53A1BB-A55E-4671-9DDD-6E7E17ECC13A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70AA62A0-1E6A-4546-A6C9-1F58ED4DDB68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70AA62A0-1E6A-4546-A6C9-1F58ED4DDB68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70AA62A0-1E6A-4546-A6C9-1F58ED4DDB68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70AA62A0-1E6A-4546-A6C9-1F58ED4DDB68}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {45DFDD68-6215-4FF1-BE92-B22F7E002BA9}
+	EndGlobalSection
+EndGlobal
