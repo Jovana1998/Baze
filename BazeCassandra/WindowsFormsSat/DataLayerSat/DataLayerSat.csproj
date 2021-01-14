@@ -170,6 +170,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataProvider.cs" />
+    <Compile Include="QueryEntities\Komentar.cs" />
+    <Compile Include="QueryEntities\Korisnik.cs" />
+    <Compile Include="QueryEntities\KorisnikKomentar.cs" />
+    <Compile Include="QueryEntities\ListaOmiljenih.cs" />
+    <Compile Include="QueryEntities\Narudzbina.cs" />
+    <Compile Include="QueryEntities\Sat.cs" />
+    <Compile Include="QueryEntities\Sat_Brend.cs" />
+    <Compile Include="QueryEntities\Sat_Cena.cs" />
     <Compile Include="SessionManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -177,5 +186,6 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

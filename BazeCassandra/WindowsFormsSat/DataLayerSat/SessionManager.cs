@@ -20,7 +20,7 @@ namespace DataLayerSat
             if (session == null)
             {
                 Cluster cluster = Cluster.Builder().AddContactPoint("127.0.0.1").Build();
-                session = cluster.Connect("Hotelier");
+                session = cluster.Connect("Baze");
             }
 
             return session;
