@@ -1,0 +1,2 @@
+C:\Users\Korisnik\Documents\NBP\Baze\BazeCassandra\WindowsFormsSat\DataLayerSat\obj\Debug\DataLayerSat.csprojAssemblyReference.cache
+C:\Users\Korisnik\Documents\NBP\Baze\BazeCassandra\WindowsFormsSat\DataLayerSat\obj\Debug\DataLayerSat.csproj.CoreCompileInputs.cache
