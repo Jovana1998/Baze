@@ -208,5 +208,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataLayerSat\DataLayerSat.csproj">
+      <Project>{70aa62a0-1e6a-4546-a6c9-1f58ed4ddb68}</Project>
+      <Name>DataLayerSat</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -31,6 +31,8 @@ namespace WindowsFormsSat
         {
             this.Dodaj_Sat = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Prikazi_Listu_Omiljenih = new System.Windows.Forms.Button();
+            this.Ucitaj_Sve_Satove = new System.Windows.Forms.Button();
             this.Prikazi_Sve_Satove_Odredjenog_Korisnika = new System.Windows.Forms.Button();
             this.Prikazi_Cena_Od_Do = new System.Windows.Forms.Button();
             this.Prikazi_Satove_Brenda = new System.Windows.Forms.Button();
@@ -38,19 +40,17 @@ namespace WindowsFormsSat
             this.Izbrisi_Sat = new System.Windows.Forms.Button();
             this.Azuriraj_Sat = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.Prikazi_Sve_Narudzbine = new System.Windows.Forms.Button();
             this.Ucitaj_Narudzbinu = new System.Windows.Forms.Button();
             this.Izbrisi_Narudzbinu = new System.Windows.Forms.Button();
             this.Azuriraj_Narudzbinu = new System.Windows.Forms.Button();
             this.Dodaj_Narudzbinu = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.Prikazi_Sve_Komentare = new System.Windows.Forms.Button();
             this.Ucitaj_Komentar = new System.Windows.Forms.Button();
             this.Azuriraj_Komentar = new System.Windows.Forms.Button();
             this.Izbrisi_Komentar = new System.Windows.Forms.Button();
             this.Dodaj_Komentar = new System.Windows.Forms.Button();
-            this.Ucitaj_Sve_Satove = new System.Windows.Forms.Button();
-            this.Prikazi_Listu_Omiljenih = new System.Windows.Forms.Button();
-            this.Prikazi_Sve_Komentare = new System.Windows.Forms.Button();
-            this.Prikazi_Sve_Narudzbine = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -64,6 +64,7 @@ namespace WindowsFormsSat
             this.Dodaj_Sat.TabIndex = 0;
             this.Dodaj_Sat.Text = "Dodaj sat";
             this.Dodaj_Sat.UseVisualStyleBackColor = true;
+            this.Dodaj_Sat.Click += new System.EventHandler(this.Dodaj_Sat_Click);
             // 
             // groupBox1
             // 
@@ -82,6 +83,24 @@ namespace WindowsFormsSat
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sat";
+            // 
+            // Prikazi_Listu_Omiljenih
+            // 
+            this.Prikazi_Listu_Omiljenih.Location = new System.Drawing.Point(7, 359);
+            this.Prikazi_Listu_Omiljenih.Name = "Prikazi_Listu_Omiljenih";
+            this.Prikazi_Listu_Omiljenih.Size = new System.Drawing.Size(175, 23);
+            this.Prikazi_Listu_Omiljenih.TabIndex = 8;
+            this.Prikazi_Listu_Omiljenih.Text = "Prikazi listu omiljenih";
+            this.Prikazi_Listu_Omiljenih.UseVisualStyleBackColor = true;
+            // 
+            // Ucitaj_Sve_Satove
+            // 
+            this.Ucitaj_Sve_Satove.Location = new System.Drawing.Point(7, 329);
+            this.Ucitaj_Sve_Satove.Name = "Ucitaj_Sve_Satove";
+            this.Ucitaj_Sve_Satove.Size = new System.Drawing.Size(175, 23);
+            this.Ucitaj_Sve_Satove.TabIndex = 7;
+            this.Ucitaj_Sve_Satove.Text = "Ucitaj sve satove";
+            this.Ucitaj_Sve_Satove.UseVisualStyleBackColor = true;
             // 
             // Prikazi_Sve_Satove_Odredjenog_Korisnika
             // 
@@ -118,6 +137,7 @@ namespace WindowsFormsSat
             this.Ucitaj_Sat.TabIndex = 3;
             this.Ucitaj_Sat.Text = "Ucitaj sat";
             this.Ucitaj_Sat.UseVisualStyleBackColor = true;
+            this.Ucitaj_Sat.Click += new System.EventHandler(this.Ucitaj_Sat_Click);
             // 
             // Izbrisi_Sat
             // 
@@ -150,6 +170,15 @@ namespace WindowsFormsSat
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Narudzbina";
+            // 
+            // Prikazi_Sve_Narudzbine
+            // 
+            this.Prikazi_Sve_Narudzbine.Location = new System.Drawing.Point(7, 179);
+            this.Prikazi_Sve_Narudzbine.Name = "Prikazi_Sve_Narudzbine";
+            this.Prikazi_Sve_Narudzbine.Size = new System.Drawing.Size(187, 23);
+            this.Prikazi_Sve_Narudzbine.TabIndex = 4;
+            this.Prikazi_Sve_Narudzbine.Text = "Prikazi sve narudzbine";
+            this.Prikazi_Sve_Narudzbine.UseVisualStyleBackColor = true;
             // 
             // Ucitaj_Narudzbinu
             // 
@@ -201,6 +230,15 @@ namespace WindowsFormsSat
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Korisnik";
             // 
+            // Prikazi_Sve_Komentare
+            // 
+            this.Prikazi_Sve_Komentare.Location = new System.Drawing.Point(7, 147);
+            this.Prikazi_Sve_Komentare.Name = "Prikazi_Sve_Komentare";
+            this.Prikazi_Sve_Komentare.Size = new System.Drawing.Size(163, 23);
+            this.Prikazi_Sve_Komentare.TabIndex = 4;
+            this.Prikazi_Sve_Komentare.Text = "Prikazi sve komentare";
+            this.Prikazi_Sve_Komentare.UseVisualStyleBackColor = true;
+            // 
             // Ucitaj_Komentar
             // 
             this.Ucitaj_Komentar.Location = new System.Drawing.Point(7, 111);
@@ -236,42 +274,6 @@ namespace WindowsFormsSat
             this.Dodaj_Komentar.TabIndex = 0;
             this.Dodaj_Komentar.Text = "Dodaj komentar";
             this.Dodaj_Komentar.UseVisualStyleBackColor = true;
-            // 
-            // Ucitaj_Sve_Satove
-            // 
-            this.Ucitaj_Sve_Satove.Location = new System.Drawing.Point(7, 329);
-            this.Ucitaj_Sve_Satove.Name = "Ucitaj_Sve_Satove";
-            this.Ucitaj_Sve_Satove.Size = new System.Drawing.Size(175, 23);
-            this.Ucitaj_Sve_Satove.TabIndex = 7;
-            this.Ucitaj_Sve_Satove.Text = "Ucitaj sve satove";
-            this.Ucitaj_Sve_Satove.UseVisualStyleBackColor = true;
-            // 
-            // Prikazi_Listu_Omiljenih
-            // 
-            this.Prikazi_Listu_Omiljenih.Location = new System.Drawing.Point(7, 359);
-            this.Prikazi_Listu_Omiljenih.Name = "Prikazi_Listu_Omiljenih";
-            this.Prikazi_Listu_Omiljenih.Size = new System.Drawing.Size(175, 23);
-            this.Prikazi_Listu_Omiljenih.TabIndex = 8;
-            this.Prikazi_Listu_Omiljenih.Text = "Prikazi listu omiljenih";
-            this.Prikazi_Listu_Omiljenih.UseVisualStyleBackColor = true;
-            // 
-            // Prikazi_Sve_Komentare
-            // 
-            this.Prikazi_Sve_Komentare.Location = new System.Drawing.Point(7, 147);
-            this.Prikazi_Sve_Komentare.Name = "Prikazi_Sve_Komentare";
-            this.Prikazi_Sve_Komentare.Size = new System.Drawing.Size(163, 23);
-            this.Prikazi_Sve_Komentare.TabIndex = 4;
-            this.Prikazi_Sve_Komentare.Text = "Prikazi sve komentare";
-            this.Prikazi_Sve_Komentare.UseVisualStyleBackColor = true;
-            // 
-            // Prikazi_Sve_Narudzbine
-            // 
-            this.Prikazi_Sve_Narudzbine.Location = new System.Drawing.Point(7, 179);
-            this.Prikazi_Sve_Narudzbine.Name = "Prikazi_Sve_Narudzbine";
-            this.Prikazi_Sve_Narudzbine.Size = new System.Drawing.Size(187, 23);
-            this.Prikazi_Sve_Narudzbine.TabIndex = 4;
-            this.Prikazi_Sve_Narudzbine.Text = "Prikazi sve narudzbine";
-            this.Prikazi_Sve_Narudzbine.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 

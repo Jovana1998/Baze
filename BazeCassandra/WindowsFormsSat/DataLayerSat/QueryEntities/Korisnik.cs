@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataLayerSat.QueryEntities
 {
-    class Korisnik
+    public class Korisnik
     {
         public int idkorisnika { get; set; }
         public int idsata { get; set; }
