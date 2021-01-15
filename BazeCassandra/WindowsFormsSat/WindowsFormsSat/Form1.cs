@@ -20,7 +20,7 @@ namespace WindowsFormsSat
 
         private void Dodaj_Sat_Click(object sender, EventArgs e)
         {
-            DataProvider.DodajSat(1,1,"rolex",1000,"srebro");
+            DataProvider.DodajSat(1, 1,"rolex",1000,"srebro");
             DataProvider.DodajSat(2, 1, "casio", 2000, "srebro");
             MessageBox.Show("Dodat je sat");
         }

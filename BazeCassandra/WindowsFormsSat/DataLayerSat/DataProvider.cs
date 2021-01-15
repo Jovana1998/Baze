@@ -16,8 +16,8 @@ namespace DataLayerSat
             if (session == null)
                 return;
 
-            RowSet SatData = session.Execute("insert into \"Sat\" (\"idsata\", idkorisnika, brend, cena, materijal)  values (" + idsata + " , "+idkorisnika+", "+brend+", "+cena+", "+materijal+")");
-            RowSet SatBrend = session.Execute("insert into \"Sat_Brend\" (brend, idsata) values ("+brend+"," + idsata+")");
+            RowSet SatData = session.Execute("insert into \"Sat\" (idsata, idkorisnika, brend, cena, materijal)  values (" + idsata + " , "+idkorisnika+" , '"+brend+"' , "+cena+", '"+materijal+"')");
+            RowSet SatBrend = session.Execute("insert into \"Sat_Brend\" (brend, idsata) values ('"+brend+"'," + idsata+")");
             RowSet SatCena = session.Execute("insert into \"Sat_Cena\" (cena, idsata) values ("+cena+", " + idsata + ")");
             RowSet SatKorinik = session.Execute("insert into \"Korisnik_Sat\" (idkorisnika, idsata) values (" + idkorisnika + ", " + idsata + ")");
         }
@@ -49,7 +49,12 @@ namespace DataLayerSat
             if (session == null)
                 return;
 
-            RowSet SatData = session.Execute("update \"Sat\" set cena="+cena+" where idsata =" + idsata);
+            Row cenaData = session.Execute("select * from  \"Sat\" where idsata =" + idsata).FirstOrDefault();
+
+            double trazenaCena = (double)cenaData["cena"];
+            RowSet SatData = session.Execute("update \"Sat\" set cena=" + cena + " where idsata =" + idsata);
+            RowSet Sat_CenaDeleteData = session.Execute("delete from \"Sat_Cena\" where cena =" + trazenaCena + " and idsata= " + idsata);
+            RowSet InsertData = session.Execute("insert into \"Sat_Cena\" (cena, idsata) values(" + cena + ", " + idsata + ")");
         }
         public static void ObrisiSat(int idsata)
         {
@@ -57,8 +62,21 @@ namespace DataLayerSat
 
             if (session == null)
                 return;
+            Row readData = session.Execute("select * from \"Sat\" where \"idsata\" = " + idsata + "").FirstOrDefault();
+            Sat sat = new Sat();
+            if (readData != null)
+            {
 
+                sat.idsata = readData["idsata"] != null ? (int)readData["idsata"] : 0;
+                sat.idkorisnika = readData["idkorisnika"] != null ? (int)readData["idkorisnika"] : 0;
+                sat.brend = readData["brend"] != null ? readData["brend"].ToString() : string.Empty;
+                sat.cena = readData["cena"] != null ? (double)readData["cena"] : 0;
+                sat.materijal = readData["materijal"] != null ? readData["materijal"].ToString() : string.Empty;
+            }
             RowSet satData = session.Execute("delete from \"Sat\" where \"idsata\" = " + idsata + "");
+            RowSet SatBrend = session.Execute("delete from \"Sat_Brend\" where brend = '" + sat.brend + "' and idsata= " + idsata);
+            RowSet SatCena = session.Execute("delete from \"Sat_Cena\" where cena = " + sat.cena + " and idsata=  " + idsata);
+            RowSet SatKorinik = session.Execute("delete from \"Korisnik_Sat\" where idkorisnika = " + sat.idkorisnika + " and idsata = " + idsata);
 
         }
         public static List<Sat> SviSatovi()
