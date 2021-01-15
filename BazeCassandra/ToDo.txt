@@ -46,5 +46,5 @@ CREATE TABLE "KorisnikKomentar" (
     idkupca int,
     idkomentara int,
     komentar text,
-    PRIMARY KEY ("idprodavca")
+    PRIMARY KEY ("idprodavca", "idkomentara")
 )
