@@ -20,7 +20,8 @@ namespace WindowsFormsSat
 
         private void Dodaj_Sat_Click(object sender, EventArgs e)
         {
-            DataProvider.DodajSat("1");
+            DataProvider.DodajSat(1,1,"rolex",1000,"srebro");
+            DataProvider.DodajSat(2, 1, "casio", 2000, "srebro");
             MessageBox.Show("Dodat je sat");
         }
 
@@ -33,14 +34,14 @@ namespace WindowsFormsSat
 
         private void Azuriraj_Sat_Click(object sender, EventArgs e)
         {
-            DataProvider.AzurirajSat(1);
-            MessageBox.Show("Azuriran je sat");
+            DataProvider.AzurirajSat(1, 5000);
+            MessageBox.Show("Azuriran je sat 1");
         }
 
         private void Izbrisi_Sat_Click(object sender, EventArgs e)
         {
             DataProvider.ObrisiSat(1);
-            MessageBox.Show("Sat je izbrisan");
+            MessageBox.Show("Sat 1 je izbrisan");
         }
 
         private void Ucitaj_Sve_Satove_Click(object sender, EventArgs e)
@@ -141,6 +142,18 @@ namespace WindowsFormsSat
 
             foreach (Narudzbina n in nar)
                 MessageBox.Show("Narudzbina: " + n.idnarudzbine);
+        }
+
+        private void DodajUListuOmiljenihbtn_Click(object sender, EventArgs e)
+        {
+            DataProvider.DodajUListuOmiljenih(1,1);
+            MessageBox.Show("Dodat je sat u listu omiljenih");
+        }
+
+        private void IzbrisiIzListeOmiljenihbtn_Click(object sender, EventArgs e)
+        {
+            DataProvider.IzbrisiIzListeOmiljenih(1,1);
+            MessageBox.Show("izbrisan je sat iz liste omiljenih");
         }
     }
 }

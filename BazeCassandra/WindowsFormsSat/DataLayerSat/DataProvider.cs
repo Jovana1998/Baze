@@ -9,16 +9,17 @@ namespace DataLayerSat
 {
     public class DataProvider
     {
-        public static void DodajSat(string idsata)
+        public static void DodajSat(int idsata,int idkorisnika, string brend, double cena, string materijal)
         {
             ISession session = SessionManager.GetSession();
 
             if (session == null)
                 return;
 
-            RowSet SatData = session.Execute("insert into \"Sat\" (\"idsata\", idkorisnika, brend, cena, materijal)  values (" + idsata + ", 1, 'rolex', 1000, 'zlato')");
-            RowSet SatBrend = session.Execute("insert into \"Sat_Brend\" (brend, idsata) values ('rolex'," + idsata+")");
-            RowSet SatCena = session.Execute("insert into \"Sat_Cena\" (cena, idsata) values (5000," + idsata + ")");
+            RowSet SatData = session.Execute("insert into \"Sat\" (\"idsata\", idkorisnika, brend, cena, materijal)  values (" + idsata + " , "+idkorisnika+", "+brend+", "+cena+", "+materijal+")");
+            RowSet SatBrend = session.Execute("insert into \"Sat_Brend\" (brend, idsata) values ("+brend+"," + idsata+")");
+            RowSet SatCena = session.Execute("insert into \"Sat_Cena\" (cena, idsata) values ("+cena+", " + idsata + ")");
+            RowSet SatKorinik = session.Execute("insert into \"Korisnik\" (idkorisnika, idsata) values (" + idkorisnika + ", " + idsata + ")");
         }
         public static Sat VratiSat (int idsata)
         {
@@ -41,14 +42,14 @@ namespace DataLayerSat
 
             return sat;
         }
-        public static void AzurirajSat(int idsata)
+        public static void AzurirajSat(int idsata, double cena)
         {
             ISession session = SessionManager.GetSession();
 
             if (session == null)
                 return;
 
-            RowSet SatData = session.Execute("update \"Sat\" set cena= 2000 where idsata =" + idsata);
+            RowSet SatData = session.Execute("update \"Sat\" set cena="+cena+" where idsata =" + idsata);
         }
         public static void ObrisiSat(int idsata)
         {
@@ -57,7 +58,7 @@ namespace DataLayerSat
             if (session == null)
                 return;
 
-            RowSet roomData = session.Execute("delete from \"Sat\" where \"idsata\" = " + idsata + "");
+            RowSet satData = session.Execute("delete from \"Sat\" where \"idsata\" = " + idsata + "");
 
         }
         public static List<Sat> SviSatovi()
@@ -168,7 +169,7 @@ namespace DataLayerSat
             if (session == null)
                 return null;
 
-            var satoviData = session.Execute("select * from \"ListaOmiljenih2\" where korisnikid = " + idkorisnika);
+            var satoviData = session.Execute("select * from \"ListaOmiljenih\" where korisnikid = " + idkorisnika);
 
 
             foreach (var satData in satoviData)
@@ -344,6 +345,25 @@ namespace DataLayerSat
 
             RowSet narData = session.Execute("update \"Narudzbina\" set idsata= 2 where idnarudzbine =" + idnarudzbine);
 
+        }
+        public static void DodajUListuOmiljenih(int korisnikid, int satid)
+        {
+            ISession session = SessionManager.GetSession();
+
+            if (session == null)
+                return;
+
+            RowSet narData = session.Execute("insert into \"ListaOmiljenih2\" (korisnikid, satid) values ("+korisnikid+", "+satid+")");
+
+        }
+        public static void IzbrisiIzListeOmiljenih(int idkorisnika, int idsata)
+        {
+            ISession session = SessionManager.GetSession();
+
+            if (session == null)
+                return;
+
+            RowSet narudzbinaData = session.Execute("delete from \"ListaOmiljenih2\" where korisnikid = " + idkorisnika + " and satid= "+idsata);
         }
     }
 }
