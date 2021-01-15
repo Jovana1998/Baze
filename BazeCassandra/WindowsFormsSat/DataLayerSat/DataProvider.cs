@@ -19,7 +19,7 @@ namespace DataLayerSat
             RowSet SatData = session.Execute("insert into \"Sat\" (\"idsata\", idkorisnika, brend, cena, materijal)  values (" + idsata + " , "+idkorisnika+", "+brend+", "+cena+", "+materijal+")");
             RowSet SatBrend = session.Execute("insert into \"Sat_Brend\" (brend, idsata) values ("+brend+"," + idsata+")");
             RowSet SatCena = session.Execute("insert into \"Sat_Cena\" (cena, idsata) values ("+cena+", " + idsata + ")");
-            RowSet SatKorinik = session.Execute("insert into \"Korisnik\" (idkorisnika, idsata) values (" + idkorisnika + ", " + idsata + ")");
+            RowSet SatKorinik = session.Execute("insert into \"Korisnik_Sat\" (idkorisnika, idsata) values (" + idkorisnika + ", " + idsata + ")");
         }
         public static Sat VratiSat (int idsata)
         {
@@ -136,21 +136,21 @@ namespace DataLayerSat
 
             return satovi;
         }
-        public static List<Korisnik> SatoviJednogKorisnika(int idkorisnika)
+        public static List<Korisnik_Sat> SatoviJednogKorisnika(int idkorisnika)
         {
             ISession session = SessionManager.GetSession();
-            List<Korisnik> satovi = new List<Korisnik>();
+            List<Korisnik_Sat> satovi = new List<Korisnik_Sat>();
 
 
             if (session == null)
                 return null;
 
-            var satoviData = session.Execute("select * from \"Korisnik\" where idkorisnika = "+idkorisnika);
+            var satoviData = session.Execute("select * from \"Korisnik_Sat\" where idkorisnika = "+idkorisnika);
 
 
             foreach (var satData in satoviData)
             {
-                Korisnik sat = new Korisnik();
+                Korisnik_Sat sat = new Korisnik_Sat();
                 sat.idsata = satData["idsata"] != null ? (int)satData["idsata"] : 0;
                 sat.idkorisnika = satData["idkorisnika"] != null ? (int)satData["idkorisnika"] : 0;
                 satovi.Add(sat);
@@ -364,6 +364,79 @@ namespace DataLayerSat
                 return;
 
             RowSet narudzbinaData = session.Execute("delete from \"ListaOmiljenih2\" where korisnikid = " + idkorisnika + " and satid= "+idsata);
+        }
+        public static void DodajKorisnika(string idkorisnika)
+        {
+            ISession session = SessionManager.GetSession();
+
+            if (session == null)
+                return;
+
+            RowSet korisnikData = session.Execute("insert into \"Korisnik\"(\"idkorisnika\", ime, lokacija, prezime) values (" + idkorisnika + ", 'Katarina', 'Paracin', 'Lukic')");
+           
+        }
+        public static Korisnik VratiKorisnika(int idkorisnika)
+        {
+            ISession session = SessionManager.GetSession();
+            Korisnik korisnik = new Korisnik();
+
+            if (session == null)
+                return null;
+
+            Row korisnikData = session.Execute("select * from \"Korisnik\" where \"idkorisnika\"=1").FirstOrDefault();
+
+            if (korisnikData != null)
+            {
+                korisnik.idkorisnika = korisnikData["idkorisnika"] != null ? (int)korisnikData["idkorisnika"] : 0;
+                korisnik.ime = korisnikData["ime"] != null ? korisnikData["ime"].ToString() : string.Empty;
+                korisnik.lokacija = korisnikData["lokacija"] != null ? korisnikData["lokacija"].ToString() : string.Empty;
+                korisnik.prezime = korisnikData["prezime"] != null ? korisnikData["prezime"].ToString() : string.Empty;
+
+            }
+
+            return korisnik;
+        }
+        public static void ObrisiKorisnika(int idkorisnika)
+        {
+            ISession session = SessionManager.GetSession();
+
+            if (session == null)
+                return;
+
+            RowSet korisnikData = session.Execute("delete from \"Korisnik\" where \"idkorisnika\" = " + idkorisnika + "");
+        }
+        public static void AzurirajKorisnika(int idkorisnika)
+        {
+            ISession session = SessionManager.GetSession();
+
+            if (session == null)
+                return;
+
+            RowSet korisnikData = session.Execute("update \"Korisnik\" set lokacija= 'Nis' where idkorisnika =" + idkorisnika);
+        }
+        public static List<Korisnik> VratiSveKorisnika()
+        {
+            ISession session = SessionManager.GetSession();
+            List<Korisnik> korisnici = new List<Korisnik>();
+
+            if (session == null)
+                return null;
+
+            var korisnikData = session.Execute("select * from \"Korisnik\"");
+
+            foreach (var row in korisnikData)
+            {
+                Korisnik k = new Korisnik();
+                k.idkorisnika = row["idkorisnika"] != null ? (int)row["idkorisnika"] : 0;
+                k.ime = row["ime"] != null ? row["ime"].ToString() : string.Empty;
+                k.lokacija = row["lokacija"] != null ? row["lokacija"].ToString() : string.Empty;
+                k.prezime = row["prezime"] != null ? row["prezime"].ToString() : string.Empty;
+
+
+                korisnici.Add(k);
+            }
+
+            return korisnici;
         }
     }
 }

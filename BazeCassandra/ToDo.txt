@@ -8,10 +8,14 @@ CREATE TABLE "Sat" (
 )
 CREATE TABLE "Korisnik" (
     idkorisnika int,
-    idsata int,
     ime text,
     prezime text,
     lokacija text,
+    PRIMARY KEY ("idkorisnika")
+)
+CREATE TABLE "Korisnik_Sat" (
+    idkorisnika int,
+    idsata int,
     PRIMARY KEY ("idkorisnika", "idsata")
 )
 CREATE TABLE "Sat_Brend"
@@ -28,7 +32,7 @@ CREATE TABLE "Sat_Cena" (
 CREATE TABLE "ListaOmiljenih" (
     korisnikid int, 
     satid int, 
-    PRIMARY KEY ("korisnikid", "idsata")
+    PRIMARY KEY ("korisnikid", "satid")
 )
 CREATE TABLE "Narudzbina" (
     idnarudzbine int, 

@@ -359,7 +359,7 @@ namespace WindowsFormsSat
             this.Korisnik.Controls.Add(this.Dodaj_korisnika);
             this.Korisnik.Location = new System.Drawing.Point(370, 332);
             this.Korisnik.Name = "Korisnik";
-            this.Korisnik.Size = new System.Drawing.Size(200, 276);
+            this.Korisnik.Size = new System.Drawing.Size(200, 318);
             this.Korisnik.TabIndex = 4;
             this.Korisnik.TabStop = false;
             this.Korisnik.Text = "Korisnik";
@@ -368,46 +368,51 @@ namespace WindowsFormsSat
             // 
             this.Dodaj_korisnika.Location = new System.Drawing.Point(8, 36);
             this.Dodaj_korisnika.Name = "Dodaj_korisnika";
-            this.Dodaj_korisnika.Size = new System.Drawing.Size(183, 28);
+            this.Dodaj_korisnika.Size = new System.Drawing.Size(183, 33);
             this.Dodaj_korisnika.TabIndex = 0;
             this.Dodaj_korisnika.Text = "Dodaj korisnika";
             this.Dodaj_korisnika.UseVisualStyleBackColor = true;
+            this.Dodaj_korisnika.Click += new System.EventHandler(this.Dodaj_korisnika_Click);
             // 
             // Izbrisi_korisnika
             // 
-            this.Izbrisi_korisnika.Location = new System.Drawing.Point(8, 83);
+            this.Izbrisi_korisnika.Location = new System.Drawing.Point(8, 84);
             this.Izbrisi_korisnika.Name = "Izbrisi_korisnika";
-            this.Izbrisi_korisnika.Size = new System.Drawing.Size(183, 28);
+            this.Izbrisi_korisnika.Size = new System.Drawing.Size(183, 36);
             this.Izbrisi_korisnika.TabIndex = 1;
             this.Izbrisi_korisnika.Text = "Izbrisi korisnika";
             this.Izbrisi_korisnika.UseVisualStyleBackColor = true;
+            this.Izbrisi_korisnika.Click += new System.EventHandler(this.Izbrisi_korisnika_Click);
             // 
             // Azuriraj_korisnika
             // 
             this.Azuriraj_korisnika.Location = new System.Drawing.Point(8, 136);
             this.Azuriraj_korisnika.Name = "Azuriraj_korisnika";
-            this.Azuriraj_korisnika.Size = new System.Drawing.Size(183, 28);
+            this.Azuriraj_korisnika.Size = new System.Drawing.Size(183, 32);
             this.Azuriraj_korisnika.TabIndex = 2;
             this.Azuriraj_korisnika.Text = "Azuriraj korisnika";
             this.Azuriraj_korisnika.UseVisualStyleBackColor = true;
+            this.Azuriraj_korisnika.Click += new System.EventHandler(this.Azuriraj_korisnika_Click);
             // 
             // Ucitaj_korisnika
             // 
             this.Ucitaj_korisnika.Location = new System.Drawing.Point(8, 183);
             this.Ucitaj_korisnika.Name = "Ucitaj_korisnika";
-            this.Ucitaj_korisnika.Size = new System.Drawing.Size(183, 27);
+            this.Ucitaj_korisnika.Size = new System.Drawing.Size(183, 31);
             this.Ucitaj_korisnika.TabIndex = 5;
             this.Ucitaj_korisnika.Text = "Ucitaj korisnika";
             this.Ucitaj_korisnika.UseVisualStyleBackColor = true;
+            this.Ucitaj_korisnika.Click += new System.EventHandler(this.Ucitaj_korisnika_Click);
             // 
             // Prikazi_sve_korisnike
             // 
-            this.Prikazi_sve_korisnike.Location = new System.Drawing.Point(8, 231);
+            this.Prikazi_sve_korisnike.Location = new System.Drawing.Point(8, 230);
             this.Prikazi_sve_korisnike.Name = "Prikazi_sve_korisnike";
-            this.Prikazi_sve_korisnike.Size = new System.Drawing.Size(183, 27);
+            this.Prikazi_sve_korisnike.Size = new System.Drawing.Size(183, 37);
             this.Prikazi_sve_korisnike.TabIndex = 6;
             this.Prikazi_sve_korisnike.Text = "Prikazi sve korisnike";
             this.Prikazi_sve_korisnike.UseVisualStyleBackColor = true;
+            this.Prikazi_sve_korisnike.Click += new System.EventHandler(this.Prikazi_sve_korisnike_Click);
             // 
             // Form1
             // 

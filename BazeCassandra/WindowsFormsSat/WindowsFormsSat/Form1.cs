@@ -68,8 +68,8 @@ namespace WindowsFormsSat
 
         private void Prikazi_Sve_Satove_Odredjenog_Korisnika_Click(object sender, EventArgs e)
         {
-            List<Korisnik> satovi = DataProvider.SatoviJednogKorisnika(1);
-            foreach (Korisnik s in satovi)
+            List<Korisnik_Sat> satovi = DataProvider.SatoviJednogKorisnika(1);
+            foreach (Korisnik_Sat s in satovi)
                 MessageBox.Show(s.idsata.ToString());
         }
 
@@ -154,6 +154,38 @@ namespace WindowsFormsSat
         {
             DataProvider.IzbrisiIzListeOmiljenih(1,1);
             MessageBox.Show("izbrisan je sat iz liste omiljenih");
+        }
+
+        private void Dodaj_korisnika_Click(object sender, EventArgs e)
+        {
+            DataProvider.DodajKorisnika("1");
+            MessageBox.Show("Korisnik je dodat!");
+        }
+
+        private void Ucitaj_korisnika_Click(object sender, EventArgs e)
+        {
+            Korisnik k = DataProvider.VratiKorisnika(1);
+            MessageBox.Show(k.ime + " " + k.prezime);
+        }
+
+        private void Izbrisi_korisnika_Click(object sender, EventArgs e)
+        {
+            DataProvider.ObrisiKorisnika(1);
+            MessageBox.Show("Korisnik je obrisan!");
+        }
+
+        private void Azuriraj_korisnika_Click(object sender, EventArgs e)
+        {
+            DataProvider.AzurirajKorisnika(1);
+            MessageBox.Show("Korisnik azuriran!");
+        }
+
+        private void Prikazi_sve_korisnike_Click(object sender, EventArgs e)
+        {
+            List<Korisnik> nar = DataProvider.VratiSveKorisnika();
+
+            foreach (Korisnik k in nar)
+                MessageBox.Show(k.ime + " " + k.prezime);
         }
     }
 }

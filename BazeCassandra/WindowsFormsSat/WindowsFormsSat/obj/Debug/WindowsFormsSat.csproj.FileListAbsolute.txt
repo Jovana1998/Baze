@@ -160,3 +160,7 @@ C:\Users\Jovana\Desktop\GIT\BazeProjekat\Baze\BazeCassandra\WindowsFormsSat\Wind
 C:\Users\Jovana\Desktop\GIT\BazeProjekat\Baze\BazeCassandra\WindowsFormsSat\WindowsFormsSat\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Jovana\Desktop\GIT\BazeProjekat\Baze\BazeCassandra\WindowsFormsSat\WindowsFormsSat\bin\Debug\System.ValueTuple.xml
 C:\Users\Jovana\Desktop\GIT\BazeProjekat\Baze\BazeCassandra\WindowsFormsSat\WindowsFormsSat\obj\Debug\WindowsFormsSat.csproj.CopyComplete
+C:\Users\Korisnik\Documents\NBP\Baze\BazeCassandra\WindowsFormsSat\WindowsFormsSat\bin\Debug\DataLayerSat.dll
+C:\Users\Korisnik\Documents\NBP\Baze\BazeCassandra\WindowsFormsSat\WindowsFormsSat\bin\Debug\DataLayerSat.pdb
+C:\Users\Korisnik\Documents\NBP\Baze\BazeCassandra\WindowsFormsSat\WindowsFormsSat\bin\Debug\DataLayerSat.dll.config
+C:\Users\Korisnik\Documents\NBP\Baze\BazeCassandra\WindowsFormsSat\WindowsFormsSat\obj\Debug\WindowsFormsSat.Form1.resources
