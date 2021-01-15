@@ -92,6 +92,7 @@ namespace WindowsFormsSat
             this.Prikazi_Listu_Omiljenih.TabIndex = 8;
             this.Prikazi_Listu_Omiljenih.Text = "Prikazi listu omiljenih";
             this.Prikazi_Listu_Omiljenih.UseVisualStyleBackColor = true;
+            this.Prikazi_Listu_Omiljenih.Click += new System.EventHandler(this.Prikazi_Listu_Omiljenih_Click);
             // 
             // Ucitaj_Sve_Satove
             // 
@@ -101,6 +102,7 @@ namespace WindowsFormsSat
             this.Ucitaj_Sve_Satove.TabIndex = 7;
             this.Ucitaj_Sve_Satove.Text = "Ucitaj sve satove";
             this.Ucitaj_Sve_Satove.UseVisualStyleBackColor = true;
+            this.Ucitaj_Sve_Satove.Click += new System.EventHandler(this.Ucitaj_Sve_Satove_Click);
             // 
             // Prikazi_Sve_Satove_Odredjenog_Korisnika
             // 
@@ -110,6 +112,7 @@ namespace WindowsFormsSat
             this.Prikazi_Sve_Satove_Odredjenog_Korisnika.TabIndex = 6;
             this.Prikazi_Sve_Satove_Odredjenog_Korisnika.Text = "Prikazi sve satove odredjenog korisnika";
             this.Prikazi_Sve_Satove_Odredjenog_Korisnika.UseVisualStyleBackColor = true;
+            this.Prikazi_Sve_Satove_Odredjenog_Korisnika.Click += new System.EventHandler(this.Prikazi_Sve_Satove_Odredjenog_Korisnika_Click);
             // 
             // Prikazi_Cena_Od_Do
             // 
@@ -119,6 +122,7 @@ namespace WindowsFormsSat
             this.Prikazi_Cena_Od_Do.TabIndex = 5;
             this.Prikazi_Cena_Od_Do.Text = "Prikazi sve satove sa cenom od-do";
             this.Prikazi_Cena_Od_Do.UseVisualStyleBackColor = true;
+            this.Prikazi_Cena_Od_Do.Click += new System.EventHandler(this.Prikazi_Cena_Od_Do_Click);
             // 
             // Prikazi_Satove_Brenda
             // 
@@ -128,6 +132,7 @@ namespace WindowsFormsSat
             this.Prikazi_Satove_Brenda.TabIndex = 4;
             this.Prikazi_Satove_Brenda.Text = "Prikazi sve satove odredjenog brenda";
             this.Prikazi_Satove_Brenda.UseVisualStyleBackColor = true;
+            this.Prikazi_Satove_Brenda.Click += new System.EventHandler(this.Prikazi_Satove_Brenda_Click);
             // 
             // Ucitaj_Sat
             // 
@@ -147,6 +152,7 @@ namespace WindowsFormsSat
             this.Izbrisi_Sat.TabIndex = 2;
             this.Izbrisi_Sat.Text = "Izbrisi sat";
             this.Izbrisi_Sat.UseVisualStyleBackColor = true;
+            this.Izbrisi_Sat.Click += new System.EventHandler(this.Izbrisi_Sat_Click);
             // 
             // Azuriraj_Sat
             // 
@@ -156,6 +162,7 @@ namespace WindowsFormsSat
             this.Azuriraj_Sat.TabIndex = 1;
             this.Azuriraj_Sat.Text = "Azuriraj sat";
             this.Azuriraj_Sat.UseVisualStyleBackColor = true;
+            this.Azuriraj_Sat.Click += new System.EventHandler(this.Azuriraj_Sat_Click);
             // 
             // groupBox2
             // 
