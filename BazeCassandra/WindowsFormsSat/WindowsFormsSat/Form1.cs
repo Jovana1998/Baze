@@ -78,5 +78,69 @@ namespace WindowsFormsSat
             foreach (ListaOmiljenih s in satovi)
                 MessageBox.Show(s.satid.ToString());
         }
+
+        private void Dodaj_Komentar_Click(object sender, EventArgs e)
+        {
+            DataProvider.DodajKomentar("2");
+            MessageBox.Show("Komentar dodat!");
+        }
+
+        private void Izbrisi_Komentar_Click(object sender, EventArgs e)
+        {
+            DataProvider.ObrisiKomentar(1, 1);
+            MessageBox.Show("Komentar je obrisan!");
+        }
+
+        private void Azuriraj_Komentar_Click(object sender, EventArgs e)
+        {
+            DataProvider.AzurirajKomentar(1, 1);
+            MessageBox.Show("Komentar je azuriran!");
+        }
+
+        private void Ucitaj_Komentar_Click(object sender, EventArgs e)
+        {
+            Komentar k = DataProvider.VratiKomentar1(1);
+            MessageBox.Show(k.tekstkomentara);
+        }
+
+        private void Prikazi_Sve_Komentare_Click(object sender, EventArgs e)
+        {
+            List<Komentar> kom = DataProvider.VratiSveKomentare();
+
+            foreach (Komentar k in kom)
+                MessageBox.Show(k.tekstkomentara);
+        }
+
+        private void Dodaj_Narudzbinu_Click(object sender, EventArgs e)
+        {
+            DataProvider.DodajNarudzbinu("2", "1", "2");
+            MessageBox.Show("Narudzbina je dodata!");
+        }
+
+        private void Azuriraj_Narudzbinu_Click(object sender, EventArgs e)
+        {
+            DataProvider.AzurirajNarudzbinu(1);
+            MessageBox.Show("Narudzbina azurirana!");
+        }
+
+        private void Izbrisi_Narudzbinu_Click(object sender, EventArgs e)
+        {
+            DataProvider.ObrisiNarudzbinu(1);
+            MessageBox.Show("Narudzbina je obrisana!");
+        }
+
+        private void Ucitaj_Narudzbinu_Click(object sender, EventArgs e)
+        {
+            Narudzbina n = DataProvider.VratiNarudzbinu(1);
+            MessageBox.Show("Narudzbina: " + n.idnarudzbine);
+        }
+
+        private void Prikazi_Sve_Narudzbine_Click(object sender, EventArgs e)
+        {
+            List<Narudzbina> nar = DataProvider.VratiSveNarudzbine();
+
+            foreach (Narudzbina n in nar)
+                MessageBox.Show("Narudzbina: " + n.idnarudzbine);
+        }
     }
 }
