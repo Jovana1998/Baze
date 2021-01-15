@@ -12,23 +12,23 @@ CREATE TABLE "Korisnik" (
     ime text,
     prezime text,
     lokacija text,
-    PRIMARY KEY ("idkorisnika")
+    PRIMARY KEY ("idkorisnika", "idsata")
 )
 CREATE TABLE "Sat_Brend"
 (
     brend text, 
     idsata int,
-    PRIMARY KEY ("brend")
+    PRIMARY KEY ("brend", "idsata")
 )
 CREATE TABLE "Sat_Cena" (
     cena double,
     idsata int,
-    PRIMARY KEY ("cena")
+    PRIMARY KEY ("cena","idsata")
 )
 CREATE TABLE "ListaOmiljenih" (
     korisnikid int, 
     satid int, 
-    PRIMARY KEY ("korisnikid")
+    PRIMARY KEY ("korisnikid", "idsata")
 )
 CREATE TABLE "Narudzbina" (
     idnarudzbine int, 
