@@ -53,7 +53,7 @@ namespace Teretane
 
         private void Vrati_Sve_Korisnike_Click(object sender, EventArgs e)
         {
-            var query = new Neo4jClient.Cypher.CypherQuery("start n=node(*) match (n:Korisnik) return n",
+            var query = new Neo4jClient.Cypher.CypherQuery("match (n:Korisnik) return n",
                                                                       new Dictionary<string, object>(), CypherResultMode.Set);
 
             List<Korisnik> korisnici = ((IRawGraphClient)client).ExecuteGetCypherResults<Korisnik>(query).ToList();
@@ -67,12 +67,12 @@ namespace Teretane
         private void Prikazi_Korisnike_Unete_Teretane_Click(object sender, EventArgs e)
         {
            
-            string unetNazivTeretane = ".*" + nazivTeretane.Text + ".*";
+            string unetNazivTeretane =  nazivTeretane.Text ;
 
             Dictionary<string, object> queryDict = new Dictionary<string, object>();
             queryDict.Add("unetNazivTeretane", unetNazivTeretane);
 
-            var query = new Neo4jClient.Cypher.CypherQuery("start n=node(*) where (n:Korisnik) and exists(n.nazivTeretane) and n.nazivTeretane =~ {unetNazivTeretane} return n",
+            var query = new Neo4jClient.Cypher.CypherQuery("MATCH p=(n)-[r:CLAN_JE]->(m) where m.naziv= '"+nazivTeretane.Text+"' RETURN n",
                                                             queryDict, CypherResultMode.Set);
 
             List<Korisnik> korisniciTeretane = ((IRawGraphClient)client).ExecuteGetCypherResults<Korisnik>(query).ToList();
@@ -87,7 +87,7 @@ namespace Teretane
         private void Prikazi_Usluge_Svih_Teretana_Click(object sender, EventArgs e)
         {
 
-            var query = new Neo4jClient.Cypher.CypherQuery("start n=node(*) match (n:Usluga) return n",
+            var query = new Neo4jClient.Cypher.CypherQuery(" match (n:Usluga) return n",
                                                                           new Dictionary<string, object>(), CypherResultMode.Set);
 
             List<Usluga> sveusluge = ((IRawGraphClient)client).ExecuteGetCypherResults<Usluga>(query).ToList();
