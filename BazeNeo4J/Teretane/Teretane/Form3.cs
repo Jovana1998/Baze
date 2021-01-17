@@ -64,5 +64,25 @@ namespace Teretane
         {
             GetClient();
         }
+
+        private void Prikazi_sve_trenere_Click(object sender, EventArgs e)
+        {
+            string unetiNaziv = textNazivTeretane.Text;
+
+            Dictionary<string, object> queryDict = new Dictionary<string, object>();
+            queryDict.Add("unetiNaziv", unetiNaziv);
+
+            var query = new Neo4jClient.Cypher.CypherQuery("MATCH p=(n)-[r:RADI_U]->(m) where m.naziv= '"+ textNazivTeretane.Text +"' RETURN n",
+                                                            queryDict, CypherResultMode.Set);
+
+
+
+            List<Trener> treneri = ((IRawGraphClient)client).ExecuteGetCypherResults<Trener>(query).ToList();
+
+            foreach (Trener a in treneri)
+            {
+                MessageBox.Show(a.ime+" "+a.prezime+" "+a.ocena);
+            }
+        }
     }
 }

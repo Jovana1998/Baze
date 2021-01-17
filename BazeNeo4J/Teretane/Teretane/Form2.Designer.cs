@@ -42,11 +42,11 @@ namespace Teretane
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textOpis = new System.Windows.Forms.TextBox();
+            this.textIme = new System.Windows.Forms.TextBox();
+            this.textNaziv = new System.Windows.Forms.TextBox();
             this.Vrati_se_na_pocetak = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textTeretanaK = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button1
@@ -122,6 +122,7 @@ namespace Teretane
             this.Nadji_korisnika.TabIndex = 7;
             this.Nadji_korisnika.Text = "Nadji korisnika";
             this.Nadji_korisnika.UseVisualStyleBackColor = true;
+            this.Nadji_korisnika.Click += new System.EventHandler(this.Nadji_korisnika_Click);
             // 
             // Nadji_plan
             // 
@@ -131,6 +132,7 @@ namespace Teretane
             this.Nadji_plan.TabIndex = 8;
             this.Nadji_plan.Text = "Nadji plan";
             this.Nadji_plan.UseVisualStyleBackColor = true;
+            this.Nadji_plan.Click += new System.EventHandler(this.Nadji_plan_Click);
             // 
             // Nadji_uslugu
             // 
@@ -140,6 +142,7 @@ namespace Teretane
             this.Nadji_uslugu.TabIndex = 9;
             this.Nadji_uslugu.Text = "Nadji uslugu";
             this.Nadji_uslugu.UseVisualStyleBackColor = true;
+            this.Nadji_uslugu.Click += new System.EventHandler(this.Nadji_uslugu_Click);
             // 
             // label1
             // 
@@ -172,26 +175,26 @@ namespace Teretane
             this.label3.TabIndex = 12;
             this.label3.Text = "Naziv:";
             // 
-            // textBox1
+            // textOpis
             // 
-            this.textBox1.Location = new System.Drawing.Point(355, 338);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(223, 26);
-            this.textBox1.TabIndex = 13;
+            this.textOpis.Location = new System.Drawing.Point(355, 338);
+            this.textOpis.Name = "textOpis";
+            this.textOpis.Size = new System.Drawing.Size(223, 26);
+            this.textOpis.TabIndex = 13;
             // 
-            // textBox2
+            // textIme
             // 
-            this.textBox2.Location = new System.Drawing.Point(355, 287);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(223, 26);
-            this.textBox2.TabIndex = 14;
+            this.textIme.Location = new System.Drawing.Point(355, 287);
+            this.textIme.Name = "textIme";
+            this.textIme.Size = new System.Drawing.Size(223, 26);
+            this.textIme.TabIndex = 14;
             // 
-            // textBox3
+            // textNaziv
             // 
-            this.textBox3.Location = new System.Drawing.Point(355, 403);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(223, 26);
-            this.textBox3.TabIndex = 15;
+            this.textNaziv.Location = new System.Drawing.Point(355, 403);
+            this.textNaziv.Name = "textNaziv";
+            this.textNaziv.Size = new System.Drawing.Size(223, 26);
+            this.textNaziv.TabIndex = 15;
             // 
             // Vrati_se_na_pocetak
             // 
@@ -204,23 +207,23 @@ namespace Teretane
             this.Vrati_se_na_pocetak.UseVisualStyleBackColor = true;
             this.Vrati_se_na_pocetak.Click += new System.EventHandler(this.Vrati_se_na_pocetak_Click);
             // 
-            // textBox4
+            // textTeretanaK
             // 
-            this.textBox4.Location = new System.Drawing.Point(355, 17);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(223, 26);
-            this.textBox4.TabIndex = 17;
+            this.textTeretanaK.Location = new System.Drawing.Point(355, 17);
+            this.textTeretanaK.Name = "textTeretanaK";
+            this.textTeretanaK.Size = new System.Drawing.Size(223, 26);
+            this.textTeretanaK.TabIndex = 17;
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 491);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textTeretanaK);
             this.Controls.Add(this.Vrati_se_na_pocetak);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textNaziv);
+            this.Controls.Add(this.textIme);
+            this.Controls.Add(this.textOpis);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -257,10 +260,10 @@ namespace Teretane
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textOpis;
+        private System.Windows.Forms.TextBox textIme;
+        private System.Windows.Forms.TextBox textNaziv;
         private System.Windows.Forms.Button Vrati_se_na_pocetak;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textTeretanaK;
     }
 }

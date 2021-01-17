@@ -37,7 +37,7 @@ namespace Teretane
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textNazivTeretane = new System.Windows.Forms.TextBox();
             this.Prikazi_usluge = new System.Windows.Forms.Button();
             this.Oceni_teretanu = new System.Windows.Forms.Button();
             this.Oceni_trenera = new System.Windows.Forms.Button();
@@ -67,6 +67,7 @@ namespace Teretane
             this.Prikazi_sve_trenere.TabIndex = 1;
             this.Prikazi_sve_trenere.Text = "Prikazi sve trenere za teretanu";
             this.Prikazi_sve_trenere.UseVisualStyleBackColor = true;
+            this.Prikazi_sve_trenere.Click += new System.EventHandler(this.Prikazi_sve_trenere_Click);
             // 
             // Uclani_se
             // 
@@ -125,12 +126,12 @@ namespace Teretane
             this.label5.TabIndex = 11;
             this.label5.Text = "Ime:";
             // 
-            // textBox1
+            // textNazivTeretane
             // 
-            this.textBox1.Location = new System.Drawing.Point(458, 96);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(268, 26);
-            this.textBox1.TabIndex = 12;
+            this.textNazivTeretane.Location = new System.Drawing.Point(458, 96);
+            this.textNazivTeretane.Name = "textNazivTeretane";
+            this.textNazivTeretane.Size = new System.Drawing.Size(268, 26);
+            this.textNazivTeretane.TabIndex = 12;
             // 
             // Prikazi_usluge
             // 
@@ -220,7 +221,7 @@ namespace Teretane
             this.Controls.Add(this.Oceni_trenera);
             this.Controls.Add(this.Oceni_teretanu);
             this.Controls.Add(this.Prikazi_usluge);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textNazivTeretane);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -247,7 +248,7 @@ namespace Teretane
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textNazivTeretane;
         private System.Windows.Forms.Button Prikazi_usluge;
         private System.Windows.Forms.Button Oceni_teretanu;
         private System.Windows.Forms.Button Oceni_trenera;
