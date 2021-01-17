@@ -186,6 +186,7 @@ namespace Teretane
             this.Controls.Add(this.groupBox1);
             this.Name = "Form5";
             this.Text = "Admin";
+            this.Load += new System.EventHandler(this.Form5_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);

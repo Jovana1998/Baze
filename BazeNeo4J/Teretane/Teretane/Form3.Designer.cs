@@ -231,6 +231,7 @@ namespace Teretane
             this.Controls.Add(this.Prikazi_sve_teretane);
             this.Name = "Form3";
             this.Text = "Korisnik";
+            this.Load += new System.EventHandler(this.Form3_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

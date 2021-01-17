@@ -18,6 +18,18 @@ namespace Teretane
     {
         public static BoltGraphClient client;
 
+        public static BoltGraphClient GetClient()
+        {
+            if (client == null)
+            {
+                IDriver driver = GraphDatabase.Driver("bolt://localhost:7687", AuthTokens.Basic("neo4j", "12345"), Config.Builder.WithEncryptionLevel(EncryptionLevel.None).ToConfig());
+                client = new BoltGraphClient(driver: driver);
+                client.Connect();
+            }
+
+            return client;
+        }
+
         public Form5()
         {
             InitializeComponent();
@@ -31,6 +43,11 @@ namespace Teretane
         private void Vrati_se_na_pocetak_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void Form5_Load(object sender, EventArgs e)
+        {
+            GetClient();
         }
     }
 }

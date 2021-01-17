@@ -56,7 +56,7 @@ namespace Teretane
         private void Trener_Click(object sender, EventArgs e)
         {
             Form2 Trener = new Form2();
-            //Trener.client = client;
+            //Trener.client; = client;
             Trener.ShowDialog();
         }
 

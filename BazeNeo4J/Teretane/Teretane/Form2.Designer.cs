@@ -195,7 +195,7 @@ namespace Teretane
             // 
             // Vrati_se_na_pocetak
             // 
-            this.Vrati_se_na_pocetak.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Vrati_se_na_pocetak.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Vrati_se_na_pocetak.Location = new System.Drawing.Point(629, 393);
             this.Vrati_se_na_pocetak.Name = "Vrati_se_na_pocetak";
             this.Vrati_se_na_pocetak.Size = new System.Drawing.Size(159, 36);
@@ -236,6 +236,7 @@ namespace Teretane
             this.Controls.Add(this.button1);
             this.Name = "Form2";
             this.Text = "Trener";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

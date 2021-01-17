@@ -162,6 +162,7 @@ namespace Teretane
             this.Controls.Add(this.textBox1);
             this.Name = "Form4";
             this.Text = "Uclani se";
+            this.Load += new System.EventHandler(this.Form4_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

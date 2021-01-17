@@ -18,6 +18,18 @@ namespace Teretane
     {
         public static BoltGraphClient client;
 
+        public static BoltGraphClient GetClient()
+        {
+            if (client == null)
+            {
+                IDriver driver = GraphDatabase.Driver("bolt://localhost:7687", AuthTokens.Basic("neo4j", "12345"), Config.Builder.WithEncryptionLevel(EncryptionLevel.None).ToConfig());
+                client = new BoltGraphClient(driver: driver);
+                client.Connect();
+            }
+
+            return client;
+        }
+
         public Form3()
         {
             InitializeComponent();
@@ -46,6 +58,11 @@ namespace Teretane
             Form4 clan = new Form4();
             //clan.client = client;
             clan.ShowDialog();
+        }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+            GetClient();
         }
     }
 }
