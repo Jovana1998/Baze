@@ -57,6 +57,7 @@ namespace Teretane
             this.Prikazi_sve_teretane.TabIndex = 0;
             this.Prikazi_sve_teretane.Text = "Prikazi sve teretane";
             this.Prikazi_sve_teretane.UseVisualStyleBackColor = true;
+            this.Prikazi_sve_teretane.Click += new System.EventHandler(this.Prikazi_sve_teretane_Click);
             // 
             // Prikazi_sve_trenere
             // 
@@ -77,6 +78,7 @@ namespace Teretane
             this.Uclani_se.TabIndex = 3;
             this.Uclani_se.Text = "Uclani se";
             this.Uclani_se.UseVisualStyleBackColor = true;
+            this.Uclani_se.Click += new System.EventHandler(this.Uclani_se_Click);
             // 
             // label1
             // 
@@ -202,6 +204,7 @@ namespace Teretane
             this.Vrati_se_na_pocetak.TabIndex = 25;
             this.Vrati_se_na_pocetak.Text = "Vrati se na pocetak";
             this.Vrati_se_na_pocetak.UseVisualStyleBackColor = true;
+            this.Vrati_se_na_pocetak.Click += new System.EventHandler(this.Vrati_se_na_pocetak_Click);
             // 
             // Form3
             // 

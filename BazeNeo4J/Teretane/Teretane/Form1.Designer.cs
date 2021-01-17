@@ -45,6 +45,7 @@ namespace Teretane
             this.Admin.TabIndex = 0;
             this.Admin.Text = "Admin";
             this.Admin.UseVisualStyleBackColor = true;
+            this.Admin.Click += new System.EventHandler(this.Admin_Click);
             // 
             // Trener
             // 
@@ -56,6 +57,7 @@ namespace Teretane
             this.Trener.TabIndex = 1;
             this.Trener.Text = "Trener";
             this.Trener.UseVisualStyleBackColor = true;
+            this.Trener.Click += new System.EventHandler(this.Trener_Click);
             // 
             // Korisnik
             // 
@@ -67,6 +69,7 @@ namespace Teretane
             this.Korisnik.TabIndex = 2;
             this.Korisnik.Text = "Korisnik";
             this.Korisnik.UseVisualStyleBackColor = true;
+            this.Korisnik.Click += new System.EventHandler(this.Korisnik_Click);
             // 
             // label1
             // 
@@ -92,6 +95,7 @@ namespace Teretane
             this.ForeColor = System.Drawing.SystemColors.Desktop;
             this.Name = "Form1";
             this.Text = "Teretane";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

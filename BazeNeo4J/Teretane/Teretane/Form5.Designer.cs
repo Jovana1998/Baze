@@ -30,18 +30,18 @@ namespace Teretane
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.Dodaj_trenera = new System.Windows.Forms.Button();
-            this.Obrisi_trenera = new System.Windows.Forms.Button();
             this.Izmeni_trenera = new System.Windows.Forms.Button();
-            this.Vrati_se_na_pocetak = new System.Windows.Forms.Button();
-            this.Obrisi_teretanu = new System.Windows.Forms.Button();
-            this.Dodaj_teretanu = new System.Windows.Forms.Button();
+            this.Obrisi_trenera = new System.Windows.Forms.Button();
+            this.Dodaj_trenera = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.Izmeni_teretanu = new System.Windows.Forms.Button();
-            this.Obrisi_korisnika = new System.Windows.Forms.Button();
-            this.Dodaj_korisnika = new System.Windows.Forms.Button();
+            this.Dodaj_teretanu = new System.Windows.Forms.Button();
+            this.Obrisi_teretanu = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.Izmeni_korisnika = new System.Windows.Forms.Button();
+            this.Dodaj_korisnika = new System.Windows.Forms.Button();
+            this.Obrisi_korisnika = new System.Windows.Forms.Button();
+            this.Vrati_se_na_pocetak = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -59,6 +59,33 @@ namespace Teretane
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Trener";
             // 
+            // Izmeni_trenera
+            // 
+            this.Izmeni_trenera.Location = new System.Drawing.Point(6, 139);
+            this.Izmeni_trenera.Name = "Izmeni_trenera";
+            this.Izmeni_trenera.Size = new System.Drawing.Size(188, 36);
+            this.Izmeni_trenera.TabIndex = 2;
+            this.Izmeni_trenera.Text = "Izmeni trenera";
+            this.Izmeni_trenera.UseVisualStyleBackColor = true;
+            // 
+            // Obrisi_trenera
+            // 
+            this.Obrisi_trenera.Location = new System.Drawing.Point(6, 88);
+            this.Obrisi_trenera.Name = "Obrisi_trenera";
+            this.Obrisi_trenera.Size = new System.Drawing.Size(188, 36);
+            this.Obrisi_trenera.TabIndex = 1;
+            this.Obrisi_trenera.Text = "Obrisi trenera";
+            this.Obrisi_trenera.UseVisualStyleBackColor = true;
+            // 
+            // Dodaj_trenera
+            // 
+            this.Dodaj_trenera.Location = new System.Drawing.Point(6, 39);
+            this.Dodaj_trenera.Name = "Dodaj_trenera";
+            this.Dodaj_trenera.Size = new System.Drawing.Size(188, 36);
+            this.Dodaj_trenera.TabIndex = 0;
+            this.Dodaj_trenera.Text = "Dodaj trenera";
+            this.Dodaj_trenera.UseVisualStyleBackColor = true;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.Izmeni_teretanu);
@@ -70,6 +97,34 @@ namespace Teretane
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Teretana";
+            // 
+            // Izmeni_teretanu
+            // 
+            this.Izmeni_teretanu.Location = new System.Drawing.Point(6, 139);
+            this.Izmeni_teretanu.Name = "Izmeni_teretanu";
+            this.Izmeni_teretanu.Size = new System.Drawing.Size(188, 36);
+            this.Izmeni_teretanu.TabIndex = 3;
+            this.Izmeni_teretanu.Text = "Izmeni teretanu";
+            this.Izmeni_teretanu.UseVisualStyleBackColor = true;
+            // 
+            // Dodaj_teretanu
+            // 
+            this.Dodaj_teretanu.Location = new System.Drawing.Point(6, 39);
+            this.Dodaj_teretanu.Name = "Dodaj_teretanu";
+            this.Dodaj_teretanu.Size = new System.Drawing.Size(188, 36);
+            this.Dodaj_teretanu.TabIndex = 2;
+            this.Dodaj_teretanu.Text = "Dodaj teretanu";
+            this.Dodaj_teretanu.UseVisualStyleBackColor = true;
+            this.Dodaj_teretanu.Click += new System.EventHandler(this.Dodaj_teretanu_Click);
+            // 
+            // Obrisi_teretanu
+            // 
+            this.Obrisi_teretanu.Location = new System.Drawing.Point(6, 88);
+            this.Obrisi_teretanu.Name = "Obrisi_teretanu";
+            this.Obrisi_teretanu.Size = new System.Drawing.Size(188, 36);
+            this.Obrisi_teretanu.TabIndex = 1;
+            this.Obrisi_teretanu.Text = "Obrisi teretanu";
+            this.Obrisi_teretanu.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
@@ -83,77 +138,14 @@ namespace Teretane
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Korisnik";
             // 
-            // Dodaj_trenera
+            // Izmeni_korisnika
             // 
-            this.Dodaj_trenera.Location = new System.Drawing.Point(6, 39);
-            this.Dodaj_trenera.Name = "Dodaj_trenera";
-            this.Dodaj_trenera.Size = new System.Drawing.Size(188, 36);
-            this.Dodaj_trenera.TabIndex = 0;
-            this.Dodaj_trenera.Text = "Dodaj trenera";
-            this.Dodaj_trenera.UseVisualStyleBackColor = true;
-            // 
-            // Obrisi_trenera
-            // 
-            this.Obrisi_trenera.Location = new System.Drawing.Point(6, 88);
-            this.Obrisi_trenera.Name = "Obrisi_trenera";
-            this.Obrisi_trenera.Size = new System.Drawing.Size(188, 36);
-            this.Obrisi_trenera.TabIndex = 1;
-            this.Obrisi_trenera.Text = "Obrisi trenera";
-            this.Obrisi_trenera.UseVisualStyleBackColor = true;
-            // 
-            // Izmeni_trenera
-            // 
-            this.Izmeni_trenera.Location = new System.Drawing.Point(6, 139);
-            this.Izmeni_trenera.Name = "Izmeni_trenera";
-            this.Izmeni_trenera.Size = new System.Drawing.Size(188, 36);
-            this.Izmeni_trenera.TabIndex = 2;
-            this.Izmeni_trenera.Text = "Izmeni trenera";
-            this.Izmeni_trenera.UseVisualStyleBackColor = true;
-            // 
-            // Vrati_se_na_pocetak
-            // 
-            this.Vrati_se_na_pocetak.Location = new System.Drawing.Point(569, 292);
-            this.Vrati_se_na_pocetak.Name = "Vrati_se_na_pocetak";
-            this.Vrati_se_na_pocetak.Size = new System.Drawing.Size(200, 47);
-            this.Vrati_se_na_pocetak.TabIndex = 3;
-            this.Vrati_se_na_pocetak.Text = "Vrati se na pocetak";
-            this.Vrati_se_na_pocetak.UseVisualStyleBackColor = true;
-            // 
-            // Obrisi_teretanu
-            // 
-            this.Obrisi_teretanu.Location = new System.Drawing.Point(6, 88);
-            this.Obrisi_teretanu.Name = "Obrisi_teretanu";
-            this.Obrisi_teretanu.Size = new System.Drawing.Size(188, 36);
-            this.Obrisi_teretanu.TabIndex = 1;
-            this.Obrisi_teretanu.Text = "Obrisi teretanu";
-            this.Obrisi_teretanu.UseVisualStyleBackColor = true;
-            // 
-            // Dodaj_teretanu
-            // 
-            this.Dodaj_teretanu.Location = new System.Drawing.Point(6, 39);
-            this.Dodaj_teretanu.Name = "Dodaj_teretanu";
-            this.Dodaj_teretanu.Size = new System.Drawing.Size(188, 36);
-            this.Dodaj_teretanu.TabIndex = 2;
-            this.Dodaj_teretanu.Text = "Dodaj teretanu";
-            this.Dodaj_teretanu.UseVisualStyleBackColor = true;
-            // 
-            // Izmeni_teretanu
-            // 
-            this.Izmeni_teretanu.Location = new System.Drawing.Point(6, 139);
-            this.Izmeni_teretanu.Name = "Izmeni_teretanu";
-            this.Izmeni_teretanu.Size = new System.Drawing.Size(188, 36);
-            this.Izmeni_teretanu.TabIndex = 3;
-            this.Izmeni_teretanu.Text = "Izmeni teretanu";
-            this.Izmeni_teretanu.UseVisualStyleBackColor = true;
-            // 
-            // Obrisi_korisnika
-            // 
-            this.Obrisi_korisnika.Location = new System.Drawing.Point(6, 88);
-            this.Obrisi_korisnika.Name = "Obrisi_korisnika";
-            this.Obrisi_korisnika.Size = new System.Drawing.Size(188, 36);
-            this.Obrisi_korisnika.TabIndex = 1;
-            this.Obrisi_korisnika.Text = "Obrisi korisnika";
-            this.Obrisi_korisnika.UseVisualStyleBackColor = true;
+            this.Izmeni_korisnika.Location = new System.Drawing.Point(6, 139);
+            this.Izmeni_korisnika.Name = "Izmeni_korisnika";
+            this.Izmeni_korisnika.Size = new System.Drawing.Size(188, 36);
+            this.Izmeni_korisnika.TabIndex = 3;
+            this.Izmeni_korisnika.Text = "Izmeni korisnika";
+            this.Izmeni_korisnika.UseVisualStyleBackColor = true;
             // 
             // Dodaj_korisnika
             // 
@@ -164,14 +156,24 @@ namespace Teretane
             this.Dodaj_korisnika.Text = "Dodaj korisnika";
             this.Dodaj_korisnika.UseVisualStyleBackColor = true;
             // 
-            // Izmeni_korisnika
+            // Obrisi_korisnika
             // 
-            this.Izmeni_korisnika.Location = new System.Drawing.Point(6, 139);
-            this.Izmeni_korisnika.Name = "Izmeni_korisnika";
-            this.Izmeni_korisnika.Size = new System.Drawing.Size(188, 36);
-            this.Izmeni_korisnika.TabIndex = 3;
-            this.Izmeni_korisnika.Text = "Izmeni korisnika";
-            this.Izmeni_korisnika.UseVisualStyleBackColor = true;
+            this.Obrisi_korisnika.Location = new System.Drawing.Point(6, 88);
+            this.Obrisi_korisnika.Name = "Obrisi_korisnika";
+            this.Obrisi_korisnika.Size = new System.Drawing.Size(188, 36);
+            this.Obrisi_korisnika.TabIndex = 1;
+            this.Obrisi_korisnika.Text = "Obrisi korisnika";
+            this.Obrisi_korisnika.UseVisualStyleBackColor = true;
+            // 
+            // Vrati_se_na_pocetak
+            // 
+            this.Vrati_se_na_pocetak.Location = new System.Drawing.Point(569, 292);
+            this.Vrati_se_na_pocetak.Name = "Vrati_se_na_pocetak";
+            this.Vrati_se_na_pocetak.Size = new System.Drawing.Size(200, 47);
+            this.Vrati_se_na_pocetak.TabIndex = 3;
+            this.Vrati_se_na_pocetak.Text = "Vrati se na pocetak";
+            this.Vrati_se_na_pocetak.UseVisualStyleBackColor = true;
+            this.Vrati_se_na_pocetak.Click += new System.EventHandler(this.Vrati_se_na_pocetak_Click);
             // 
             // Form5
             // 

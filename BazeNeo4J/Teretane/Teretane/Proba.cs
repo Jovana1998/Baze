@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using Neo4jClient;
 using Teretane.DomainModel;
 using Neo4jClient.Cypher;
-
 using Neo4j.Driver.V1;
 
 namespace Teretane

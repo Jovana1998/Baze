@@ -131,6 +131,7 @@ namespace Teretane
             this.Uclani_se_k.TabIndex = 10;
             this.Uclani_se_k.Text = "Uclani se";
             this.Uclani_se_k.UseVisualStyleBackColor = true;
+            this.Uclani_se_k.Click += new System.EventHandler(this.Uclani_se_k_Click);
             // 
             // Odustani
             // 
@@ -140,6 +141,7 @@ namespace Teretane
             this.Odustani.TabIndex = 11;
             this.Odustani.Text = "Odustani";
             this.Odustani.UseVisualStyleBackColor = true;
+            this.Odustani.Click += new System.EventHandler(this.Odustani_Click);
             // 
             // Form4
             // 
