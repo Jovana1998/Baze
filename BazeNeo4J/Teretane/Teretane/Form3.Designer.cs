@@ -42,10 +42,10 @@ namespace Teretane
             this.Oceni_teretanu = new System.Windows.Forms.Button();
             this.Oceni_trenera = new System.Windows.Forms.Button();
             this.Prikazi_moj_plan = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textUsluga = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textPlan = new System.Windows.Forms.TextBox();
             this.Vrati_se_na_pocetak = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -141,6 +141,7 @@ namespace Teretane
             this.Prikazi_usluge.TabIndex = 17;
             this.Prikazi_usluge.Text = "Prikazi sve usluge za teretanu";
             this.Prikazi_usluge.UseVisualStyleBackColor = true;
+            this.Prikazi_usluge.Click += new System.EventHandler(this.Prikazi_usluge_Click);
             // 
             // Oceni_teretanu
             // 
@@ -168,13 +169,14 @@ namespace Teretane
             this.Prikazi_moj_plan.TabIndex = 20;
             this.Prikazi_moj_plan.Text = "Prikazi moj plan";
             this.Prikazi_moj_plan.UseVisualStyleBackColor = true;
+            this.Prikazi_moj_plan.Click += new System.EventHandler(this.Prikazi_moj_plan_Click);
             // 
-            // textBox2
+            // textUsluga
             // 
-            this.textBox2.Location = new System.Drawing.Point(458, 159);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(268, 26);
-            this.textBox2.TabIndex = 21;
+            this.textUsluga.Location = new System.Drawing.Point(458, 159);
+            this.textUsluga.Name = "textUsluga";
+            this.textUsluga.Size = new System.Drawing.Size(268, 26);
+            this.textUsluga.TabIndex = 21;
             // 
             // textBox3
             // 
@@ -190,12 +192,12 @@ namespace Teretane
             this.textBox4.Size = new System.Drawing.Size(268, 26);
             this.textBox4.TabIndex = 23;
             // 
-            // textBox5
+            // textPlan
             // 
-            this.textBox5.Location = new System.Drawing.Point(458, 343);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(268, 26);
-            this.textBox5.TabIndex = 24;
+            this.textPlan.Location = new System.Drawing.Point(458, 343);
+            this.textPlan.Name = "textPlan";
+            this.textPlan.Size = new System.Drawing.Size(268, 26);
+            this.textPlan.TabIndex = 24;
             // 
             // Vrati_se_na_pocetak
             // 
@@ -213,10 +215,10 @@ namespace Teretane
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(757, 497);
             this.Controls.Add(this.Vrati_se_na_pocetak);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.textPlan);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textUsluga);
             this.Controls.Add(this.Prikazi_moj_plan);
             this.Controls.Add(this.Oceni_trenera);
             this.Controls.Add(this.Oceni_teretanu);
@@ -253,10 +255,10 @@ namespace Teretane
         private System.Windows.Forms.Button Oceni_teretanu;
         private System.Windows.Forms.Button Oceni_trenera;
         private System.Windows.Forms.Button Prikazi_moj_plan;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textUsluga;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textPlan;
         private System.Windows.Forms.Button Vrati_se_na_pocetak;
     }
 }

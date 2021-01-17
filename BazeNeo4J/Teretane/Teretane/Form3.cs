@@ -84,5 +84,45 @@ namespace Teretane
                 MessageBox.Show(a.ime+" "+a.prezime+" "+a.ocena);
             }
         }
+
+        private void Prikazi_usluge_Click(object sender, EventArgs e)
+        {
+            string unetiNaziv = textUsluga.Text;
+
+            Dictionary<string, object> queryDict = new Dictionary<string, object>();
+            queryDict.Add("unetiNaziv", unetiNaziv);
+
+            var query = new Neo4jClient.Cypher.CypherQuery("MATCH p=(n)-[r:NUDI_USLUGU]->(m) where n.naziv= '"+ textUsluga.Text +"' RETURN m",
+                                                            queryDict, CypherResultMode.Set);
+
+
+
+            List<Usluga> usluge = ((IRawGraphClient)client).ExecuteGetCypherResults<Usluga>(query).ToList();
+
+            foreach (Usluga a in usluge)
+            {
+                MessageBox.Show(a.nazivusluge);
+            }
+        }
+
+        private void Prikazi_moj_plan_Click(object sender, EventArgs e)
+        {
+            string unetiNaziv = textPlan.Text;
+
+            Dictionary<string, object> queryDict = new Dictionary<string, object>();
+            queryDict.Add("unetiNaziv", unetiNaziv);
+
+            var query = new Neo4jClient.Cypher.CypherQuery("MATCH p=(n)-[r:PREPORUCUJE_PLAN2]->(m) where m.ime= '"+ textPlan.Text +"' RETURN m",
+                                                            queryDict, CypherResultMode.Set);
+
+            //Ovde ispod ne moze plan kao klasa, treba nekoj klasi da se pridoda atribut veze, moram da vidim kako to
+
+            List<Plan> plan = ((IRawGraphClient)client).ExecuteGetCypherResults<Plan>(query).ToList();
+
+            foreach (Plan a in plan)
+            {
+                MessageBox.Show(a.opisplana);
+            }
+        }
     }
 }
