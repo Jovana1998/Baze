@@ -124,5 +124,15 @@ namespace Teretane
                 MessageBox.Show(a.opisplana);
             }
         }
+
+        private void Oceni_teretanu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Oceni_trenera_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

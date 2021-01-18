@@ -37,6 +37,21 @@ namespace Teretane
 
         private void Uclani_se_k_Click(object sender, EventArgs e)
         {
+            var queryMax = new Neo4jClient.Cypher.CypherQuery("match (n:Korisnik) return MAX(n.id)",
+                                                         new Dictionary<string, object>(), CypherResultMode.Set);
+
+            String maxId = ((IRawGraphClient)client).ExecuteGetCypherResults<String>(queryMax).ToList().FirstOrDefault();
+
+            Korisnik korisnik = new Korisnik();
+            int pom = Int32.Parse(maxId);
+            pom++;
+            korisnik.id = pom.ToString();
+            korisnik.ime = txtIme.ToString();
+            korisnik.prezime = txtPrezime.ToString();
+            korisnik.kilogram = txtKg.ToString();
+            korisnik.pol = txtPol.ToString();
+            korisnik.nivo = comboBox1.SelectedIndex.ToString();
+            korisnik.bolesti = txtBolesti.ToString();
 
         }
 
@@ -48,6 +63,16 @@ namespace Teretane
         private void Form4_Load(object sender, EventArgs e)
         {
             GetClient();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

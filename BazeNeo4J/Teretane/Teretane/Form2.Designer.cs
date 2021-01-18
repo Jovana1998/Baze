@@ -51,9 +51,10 @@ namespace Teretane
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 12);
+            this.button1.Location = new System.Drawing.Point(11, 10);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(337, 44);
+            this.button1.Size = new System.Drawing.Size(300, 35);
             this.button1.TabIndex = 0;
             this.button1.Text = "Prikazi sve korisnike unete teretane";
             this.button1.UseVisualStyleBackColor = true;
@@ -61,45 +62,54 @@ namespace Teretane
             // 
             // Dodaj_plan
             // 
-            this.Dodaj_plan.Location = new System.Drawing.Point(12, 88);
+            this.Dodaj_plan.Location = new System.Drawing.Point(11, 70);
+            this.Dodaj_plan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Dodaj_plan.Name = "Dodaj_plan";
-            this.Dodaj_plan.Size = new System.Drawing.Size(235, 41);
+            this.Dodaj_plan.Size = new System.Drawing.Size(209, 33);
             this.Dodaj_plan.TabIndex = 1;
             this.Dodaj_plan.Text = "Dodaj plan";
             this.Dodaj_plan.UseVisualStyleBackColor = true;
+            this.Dodaj_plan.Click += new System.EventHandler(this.Dodaj_plan_Click);
             // 
             // Obrisi_plan
             // 
-            this.Obrisi_plan.Location = new System.Drawing.Point(12, 150);
+            this.Obrisi_plan.Location = new System.Drawing.Point(11, 120);
+            this.Obrisi_plan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Obrisi_plan.Name = "Obrisi_plan";
-            this.Obrisi_plan.Size = new System.Drawing.Size(235, 42);
+            this.Obrisi_plan.Size = new System.Drawing.Size(209, 34);
             this.Obrisi_plan.TabIndex = 2;
             this.Obrisi_plan.Text = "Obrisi plan";
             this.Obrisi_plan.UseVisualStyleBackColor = true;
+            this.Obrisi_plan.Click += new System.EventHandler(this.Obrisi_plan_Click);
             // 
             // Izbrisi_plan
             // 
-            this.Izbrisi_plan.Location = new System.Drawing.Point(12, 213);
+            this.Izbrisi_plan.Location = new System.Drawing.Point(11, 170);
+            this.Izbrisi_plan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Izbrisi_plan.Name = "Izbrisi_plan";
-            this.Izbrisi_plan.Size = new System.Drawing.Size(235, 38);
+            this.Izbrisi_plan.Size = new System.Drawing.Size(209, 30);
             this.Izbrisi_plan.TabIndex = 3;
-            this.Izbrisi_plan.Text = "Izbrisi plan";
+            this.Izbrisi_plan.Text = "Izmeni plan";
             this.Izbrisi_plan.UseVisualStyleBackColor = true;
+            this.Izbrisi_plan.Click += new System.EventHandler(this.Izmeni_plan_Click);
             // 
             // Dodaj_uslugu
             // 
-            this.Dodaj_uslugu.Location = new System.Drawing.Point(355, 88);
+            this.Dodaj_uslugu.Location = new System.Drawing.Point(316, 70);
+            this.Dodaj_uslugu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Dodaj_uslugu.Name = "Dodaj_uslugu";
-            this.Dodaj_uslugu.Size = new System.Drawing.Size(223, 41);
+            this.Dodaj_uslugu.Size = new System.Drawing.Size(198, 33);
             this.Dodaj_uslugu.TabIndex = 4;
             this.Dodaj_uslugu.Text = "Dodaj uslugu";
             this.Dodaj_uslugu.UseVisualStyleBackColor = true;
+            this.Dodaj_uslugu.Click += new System.EventHandler(this.Dodaj_uslugu_Click);
             // 
             // Obrisi_uslugu
             // 
-            this.Obrisi_uslugu.Location = new System.Drawing.Point(355, 150);
+            this.Obrisi_uslugu.Location = new System.Drawing.Point(316, 120);
+            this.Obrisi_uslugu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Obrisi_uslugu.Name = "Obrisi_uslugu";
-            this.Obrisi_uslugu.Size = new System.Drawing.Size(223, 42);
+            this.Obrisi_uslugu.Size = new System.Drawing.Size(198, 34);
             this.Obrisi_uslugu.TabIndex = 5;
             this.Obrisi_uslugu.Text = "Obrisi uslugu";
             this.Obrisi_uslugu.UseVisualStyleBackColor = true;
@@ -107,18 +117,21 @@ namespace Teretane
             // 
             // Izmeni_uslugu
             // 
-            this.Izmeni_uslugu.Location = new System.Drawing.Point(355, 213);
+            this.Izmeni_uslugu.Location = new System.Drawing.Point(316, 170);
+            this.Izmeni_uslugu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Izmeni_uslugu.Name = "Izmeni_uslugu";
-            this.Izmeni_uslugu.Size = new System.Drawing.Size(223, 38);
+            this.Izmeni_uslugu.Size = new System.Drawing.Size(198, 30);
             this.Izmeni_uslugu.TabIndex = 6;
             this.Izmeni_uslugu.Text = "Izmeni uslugu";
             this.Izmeni_uslugu.UseVisualStyleBackColor = true;
+            this.Izmeni_uslugu.Click += new System.EventHandler(this.Izmeni_uslugu_Click);
             // 
             // Nadji_korisnika
             // 
-            this.Nadji_korisnika.Location = new System.Drawing.Point(12, 277);
+            this.Nadji_korisnika.Location = new System.Drawing.Point(11, 222);
+            this.Nadji_korisnika.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Nadji_korisnika.Name = "Nadji_korisnika";
-            this.Nadji_korisnika.Size = new System.Drawing.Size(235, 37);
+            this.Nadji_korisnika.Size = new System.Drawing.Size(209, 30);
             this.Nadji_korisnika.TabIndex = 7;
             this.Nadji_korisnika.Text = "Nadji korisnika";
             this.Nadji_korisnika.UseVisualStyleBackColor = true;
@@ -126,9 +139,10 @@ namespace Teretane
             // 
             // Nadji_plan
             // 
-            this.Nadji_plan.Location = new System.Drawing.Point(12, 336);
+            this.Nadji_plan.Location = new System.Drawing.Point(11, 269);
+            this.Nadji_plan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Nadji_plan.Name = "Nadji_plan";
-            this.Nadji_plan.Size = new System.Drawing.Size(235, 34);
+            this.Nadji_plan.Size = new System.Drawing.Size(209, 27);
             this.Nadji_plan.TabIndex = 8;
             this.Nadji_plan.Text = "Nadji plan";
             this.Nadji_plan.UseVisualStyleBackColor = true;
@@ -136,9 +150,10 @@ namespace Teretane
             // 
             // Nadji_uslugu
             // 
-            this.Nadji_uslugu.Location = new System.Drawing.Point(12, 393);
+            this.Nadji_uslugu.Location = new System.Drawing.Point(11, 314);
+            this.Nadji_uslugu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Nadji_uslugu.Name = "Nadji_uslugu";
-            this.Nadji_uslugu.Size = new System.Drawing.Size(235, 36);
+            this.Nadji_uslugu.Size = new System.Drawing.Size(209, 29);
             this.Nadji_uslugu.TabIndex = 9;
             this.Nadji_uslugu.Text = "Nadji uslugu";
             this.Nadji_uslugu.UseVisualStyleBackColor = true;
@@ -148,9 +163,9 @@ namespace Teretane
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(306, 288);
+            this.label1.Location = new System.Drawing.Point(272, 230);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 22);
+            this.label1.Size = new System.Drawing.Size(36, 18);
             this.label1.TabIndex = 10;
             this.label1.Text = "Ime:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -159,9 +174,9 @@ namespace Teretane
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(297, 339);
+            this.label2.Location = new System.Drawing.Point(264, 271);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 22);
+            this.label2.Size = new System.Drawing.Size(43, 18);
             this.label2.TabIndex = 11;
             this.label2.Text = "Opis:";
             // 
@@ -169,39 +184,43 @@ namespace Teretane
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(290, 403);
+            this.label3.Location = new System.Drawing.Point(258, 322);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 22);
+            this.label3.Size = new System.Drawing.Size(49, 18);
             this.label3.TabIndex = 12;
             this.label3.Text = "Naziv:";
             // 
             // textOpis
             // 
-            this.textOpis.Location = new System.Drawing.Point(355, 338);
+            this.textOpis.Location = new System.Drawing.Point(316, 270);
+            this.textOpis.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textOpis.Name = "textOpis";
-            this.textOpis.Size = new System.Drawing.Size(223, 26);
+            this.textOpis.Size = new System.Drawing.Size(199, 22);
             this.textOpis.TabIndex = 13;
             // 
             // textIme
             // 
-            this.textIme.Location = new System.Drawing.Point(355, 287);
+            this.textIme.Location = new System.Drawing.Point(316, 230);
+            this.textIme.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textIme.Name = "textIme";
-            this.textIme.Size = new System.Drawing.Size(223, 26);
+            this.textIme.Size = new System.Drawing.Size(199, 22);
             this.textIme.TabIndex = 14;
             // 
             // textNaziv
             // 
-            this.textNaziv.Location = new System.Drawing.Point(355, 403);
+            this.textNaziv.Location = new System.Drawing.Point(316, 322);
+            this.textNaziv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textNaziv.Name = "textNaziv";
-            this.textNaziv.Size = new System.Drawing.Size(223, 26);
+            this.textNaziv.Size = new System.Drawing.Size(199, 22);
             this.textNaziv.TabIndex = 15;
             // 
             // Vrati_se_na_pocetak
             // 
             this.Vrati_se_na_pocetak.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Vrati_se_na_pocetak.Location = new System.Drawing.Point(629, 393);
+            this.Vrati_se_na_pocetak.Location = new System.Drawing.Point(559, 314);
+            this.Vrati_se_na_pocetak.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Vrati_se_na_pocetak.Name = "Vrati_se_na_pocetak";
-            this.Vrati_se_na_pocetak.Size = new System.Drawing.Size(159, 36);
+            this.Vrati_se_na_pocetak.Size = new System.Drawing.Size(141, 29);
             this.Vrati_se_na_pocetak.TabIndex = 16;
             this.Vrati_se_na_pocetak.Text = "Vrati se na pocetak";
             this.Vrati_se_na_pocetak.UseVisualStyleBackColor = true;
@@ -209,16 +228,17 @@ namespace Teretane
             // 
             // textTeretanaK
             // 
-            this.textTeretanaK.Location = new System.Drawing.Point(355, 17);
+            this.textTeretanaK.Location = new System.Drawing.Point(316, 14);
+            this.textTeretanaK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textTeretanaK.Name = "textTeretanaK";
-            this.textTeretanaK.Size = new System.Drawing.Size(223, 26);
+            this.textTeretanaK.Size = new System.Drawing.Size(199, 22);
             this.textTeretanaK.TabIndex = 17;
             // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 491);
+            this.ClientSize = new System.Drawing.Size(711, 393);
             this.Controls.Add(this.textTeretanaK);
             this.Controls.Add(this.Vrati_se_na_pocetak);
             this.Controls.Add(this.textNaziv);
@@ -237,6 +257,7 @@ namespace Teretane
             this.Controls.Add(this.Obrisi_plan);
             this.Controls.Add(this.Dodaj_plan);
             this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form2";
             this.Text = "Trener";
             this.Load += new System.EventHandler(this.Form2_Load);

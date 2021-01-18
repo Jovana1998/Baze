@@ -66,3 +66,8 @@ C:\Users\Korisnik\Documents\NBP\Baze\BazeNeo4J\Teretane\Teretane\obj\Debug\Teret
 C:\Users\Korisnik\Documents\NBP\Baze\BazeNeo4J\Teretane\Teretane\obj\Debug\Teretane.csproj.CopyComplete
 C:\Users\Korisnik\Documents\NBP\Baze\BazeNeo4J\Teretane\Teretane\obj\Debug\Teretane.exe
 C:\Users\Korisnik\Documents\NBP\Baze\BazeNeo4J\Teretane\Teretane\obj\Debug\Teretane.pdb
+C:\Users\Jovana\Desktop\GIT\Bazeoriginal\Baze\BazeNeo4J\Teretane\Teretane\obj\Debug\Teretane.Form2.resources
+C:\Users\Jovana\Desktop\GIT\Bazeoriginal\Baze\BazeNeo4J\Teretane\Teretane\obj\Debug\Teretane.Form3.resources
+C:\Users\Jovana\Desktop\GIT\Bazeoriginal\Baze\BazeNeo4J\Teretane\Teretane\obj\Debug\Teretane.Form4.resources
+C:\Users\Jovana\Desktop\GIT\Bazeoriginal\Baze\BazeNeo4J\Teretane\Teretane\obj\Debug\Teretane.Form5.resources
+C:\Users\Jovana\Desktop\GIT\Bazeoriginal\Baze\BazeNeo4J\Teretane\Teretane\obj\Debug\Teretane.Proba.resources
