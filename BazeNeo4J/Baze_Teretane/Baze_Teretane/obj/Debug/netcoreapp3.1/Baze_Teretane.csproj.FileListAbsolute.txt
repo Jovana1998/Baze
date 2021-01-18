@@ -230,3 +230,4 @@ C:\Users\Jovana\Desktop\GIT\Bazeoriginal\Baze\BazeNeo4J\Baze_Teretane\Baze_Teret
 C:\Users\Jovana\Desktop\GIT\Bazeoriginal\Baze\BazeNeo4J\Baze_Teretane\Baze_Teretane\obj\Debug\netcoreapp3.1\Baze_Teretane.dll
 C:\Users\Jovana\Desktop\GIT\Bazeoriginal\Baze\BazeNeo4J\Baze_Teretane\Baze_Teretane\obj\Debug\netcoreapp3.1\Baze_Teretane.pdb
 C:\Users\Jovana\Desktop\GIT\Bazeoriginal\Baze\BazeNeo4J\Baze_Teretane\Baze_Teretane\obj\Debug\netcoreapp3.1\Baze_Teretane.genruntimeconfig.cache
+C:\Users\Jovana\Desktop\GIT\Bazeoriginal\Baze\BazeNeo4J\Baze_Teretane\Baze_Teretane\obj\Debug\netcoreapp3.1\Razor\Pages\UclaniSe.cshtml.g.cs

@@ -9,18 +9,34 @@
         <input type="text" value="@Model.NoviKorisnik.ime" />
         <div>Prezime:</div>
         <input type="text" value="@Model.NoviKorisnik.prezime" />
+        <div>Pol:</div>
+        <input type="text" value="@Model.NoviKorisnik.pol" />
         <div>Kilogrami:</div>
         <input type="text" value="@Model.NoviKorisnik.kilogram" />
         <div>Visina:</div>
         <input type="text" value="@Model.NoviKorisnik.visina" />
         <div>Da li ste ranije trenirali:</div>
         <select>
-            <option value="Nisam nikada trenirao/la">Nisam nikada trenirao/la</option>
-            <option value="Umereno sam trenirao/la">Umereno sam trenirao/la</option>
-            <option value="Redovno sam trenirao/la">Redovno sam trenirao/la</option>
+            <option value="1">Nisam nikada trenirao/la</option>
+            <option value="2">Umereno sam trenirao/la</option>
+            <option value="3">Redovno sam trenirao/la</option>
+        </select>
+        <div>Unesite trenera sa kojim zelite da radite :</div>
+        <select asp-for="@Model.idTrenera">
+            @foreach (Trener u in Model.SviTreneri)
+            {
+                <option value="@u.id">@u.ime  @u.prezime</option>
+            }
+        </select>
+       <div>Unesite koju uslugu zelite</div>
+        <select asp-for="@Model.idUsluge">
+            @foreach (Usluga u in Model.SveUsluge)
+            {
+                <option value="@u.id">@u.nazivusluge</option>
+            }
         </select>
         <div>Ovde unesite ukoliko imate neku hronicnu bolest:</div>
         <input type="text" value="@Model.NoviKorisnik.bolesti" />
-        <input type="submit" value="Uclani se" asp-page-handler="Uclani"/>
+        <input type="submit" value="Uclani se" asp-page-handler="Uclani" />
     </form>
 

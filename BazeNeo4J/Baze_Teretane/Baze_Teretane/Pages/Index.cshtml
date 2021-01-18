@@ -6,11 +6,7 @@
 
 <form method="post">
     <div class="text-center">
-        <h1 class="display-4">Welcome</h1>
-        @foreach (Korisnik k in Model.korisniciTeretane)
-        {
-            <p>@k.ime</p>
-        }
+      
         <input type="submit" asp-page="./Korisnik" value="Korisnik" />
         <input type="submit" asp-page="./Trener" value="Trener" />
         <input type="submit" asp-page="./Admin" value="Admin" />
