@@ -1,0 +1,26 @@
+﻿@page
+@model jovana.Pages.PrikazTeretaneModel
+@{
+    ViewData["Title"] = "PrikazTeretane";
+}
+
+    <form method="post">
+        <div>Svi treneri </div>
+        @foreach (Trener k in Model.SviTreneri)
+        {
+            <p>@k.ime</p>
+            <p>@k.prezime</p>
+            <p>@k.ocena</p>
+
+        }
+        <div>Sve usluge</div>
+        @foreach (Usluga a in Model.SveUsluge)
+        {
+            <p>@a.nazivusluge</p>
+            <p>@a.id</p>
+           
+
+        }
+    </form>
+
+
