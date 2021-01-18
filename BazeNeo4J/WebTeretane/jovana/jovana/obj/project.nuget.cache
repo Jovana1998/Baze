@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MdqO6Tawq0kpoFgBS1dNchKIrS+OMwcw/Hw2JzjbCbxS9uVEEI6CluZXx0nhNJ0jZPKQ2Hu2Gj9wQYbFlcDAeg==",
+  "dgSpecHash": "q4rcSRnuerf4KzK/vbd8v8HGaLjaNWijEWqvWjIGqcyE0cBjQfZo8aQoYpRkQBnNE5+YVkf6Jl7JevbdbaP1Qg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jovana\\Desktop\\GIT\\Bazeoriginal\\Baze\\BazeNeo4J\\Baze_Teretane\\Baze_Teretane\\Baze_Teretane.csproj",
+  "projectFilePath": "C:\\Users\\Jovana\\Desktop\\GIT\\Bazeoriginal\\Baze\\BazeNeo4J\\WebTeretane\\jovana\\jovana\\jovana.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jovana\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Jovana\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
@@ -28,7 +28,7 @@
     "C:\\Users\\Jovana\\.nuget\\packages\\microsoft.visualstudio.web.codegenerators.mvc\\3.1.4\\microsoft.visualstudio.web.codegenerators.mvc.3.1.4.nupkg.sha512",
     "C:\\Users\\Jovana\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\Jovana\\.nuget\\packages\\neo4j.driver.signed\\1.7.0\\neo4j.driver.signed.1.7.0.nupkg.sha512",
-    "C:\\Users\\Jovana\\.nuget\\packages\\neo4jclient\\3.2.0.1\\neo4jclient.3.2.0.1.nupkg.sha512",
+    "C:\\Users\\Jovana\\.nuget\\packages\\neo4jclient\\3.2.0.2\\neo4jclient.3.2.0.2.nupkg.sha512",
     "C:\\Users\\Jovana\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\Jovana\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
     "C:\\Users\\Jovana\\.nuget\\packages\\nuget.frameworks\\4.7.0\\nuget.frameworks.4.7.0.nupkg.sha512",

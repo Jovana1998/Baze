@@ -16,6 +16,7 @@ namespace Baze_Teretane
         public String bolesti { get; set; }
         public String pol { get; set; }
 
+        public Plan Plan { get; set; }
 
 
     }

@@ -6669,19 +6669,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\arsic\\.nuget\\packages\\": {}
+    "C:\\Users\\Jovana\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\NBP\\Baze\\BazeNeo4J\\WebTeretane\\jovana\\jovana\\jovana.csproj",
+      "projectUniqueName": "C:\\Users\\Jovana\\Desktop\\GIT\\Bazeoriginal\\Baze\\BazeNeo4J\\WebTeretane\\jovana\\jovana\\jovana.csproj",
       "projectName": "jovana",
-      "projectPath": "D:\\NBP\\Baze\\BazeNeo4J\\WebTeretane\\jovana\\jovana\\jovana.csproj",
-      "packagesPath": "C:\\Users\\arsic\\.nuget\\packages\\",
-      "outputPath": "D:\\NBP\\Baze\\BazeNeo4J\\WebTeretane\\jovana\\jovana\\obj\\",
+      "projectPath": "C:\\Users\\Jovana\\Desktop\\GIT\\Bazeoriginal\\Baze\\BazeNeo4J\\WebTeretane\\jovana\\jovana\\jovana.csproj",
+      "packagesPath": "C:\\Users\\Jovana\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Jovana\\Desktop\\GIT\\Bazeoriginal\\Baze\\BazeNeo4J\\WebTeretane\\jovana\\jovana\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\arsic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Jovana\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6693,7 +6693,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -6705,7 +6704,6 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
-        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
@@ -6734,7 +6732,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

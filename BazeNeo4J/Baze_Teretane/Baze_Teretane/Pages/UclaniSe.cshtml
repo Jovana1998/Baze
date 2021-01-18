@@ -1,0 +1,26 @@
+﻿@page
+@model Baze_Teretane.Pages.UclaniSeModel
+@{
+    ViewData["Title"] = "UclaniSe";
+}
+
+    <form method="post">
+        <div>Ime:</div>
+        <input type="text" value="@Model.NoviKorisnik.ime" />
+        <div>Prezime:</div>
+        <input type="text" value="@Model.NoviKorisnik.prezime" />
+        <div>Kilogrami:</div>
+        <input type="text" value="@Model.NoviKorisnik.kilogram" />
+        <div>Visina:</div>
+        <input type="text" value="@Model.NoviKorisnik.visina" />
+        <div>Da li ste ranije trenirali:</div>
+        <select>
+            <option value="Nisam nikada trenirao/la">Nisam nikada trenirao/la</option>
+            <option value="Umereno sam trenirao/la">Umereno sam trenirao/la</option>
+            <option value="Redovno sam trenirao/la">Redovno sam trenirao/la</option>
+        </select>
+        <div>Ovde unesite ukoliko imate neku hronicnu bolest:</div>
+        <input type="text" value="@Model.NoviKorisnik.bolesti" />
+        <input type="submit" value="Uclani se" asp-page-handler="Uclani"/>
+    </form>
+

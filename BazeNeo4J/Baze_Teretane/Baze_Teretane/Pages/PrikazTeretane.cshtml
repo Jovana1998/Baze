@@ -4,21 +4,37 @@
     ViewData["Title"] = "PrikazTeretane";
 }
 
-<form method="post">
-    <div>Svi treneri </div>
-    @foreach (Trener k in Model.SviTreneri)
-    {
-        <p>@k.ime</p>
-        <p>@k.prezime</p>
-        <p>@k.ocena</p>
+    <form method="post">
+        <div>Svi treneri </div>
+        @foreach (Trener k in Model.SviTreneri)
+        {
+            <p>@k.ime</p>
+            <p>@k.prezime</p>
+            <p>@k.ocena</p>
 
-    }
-    <div>Sve usluge</div>
-    @foreach (Usluga a in Model.SveUsluge)
-    {
-        <p>@a.nazivusluge</p>
-        <p>@a.id</p>
+        }
+        <div>Sve usluge</div>
+        @foreach (Usluga a in Model.SveUsluge)
+        {
+            <p>@a.nazivusluge</p>
+            <p>@a.id</p>
 
 
-    }
-</form>
+        }
+        <input type="submit" value="Zelim da se uclanim u ovu teretanu" asp-page="./UclaniSe" asp-route-id="@Model.ter.id" />
+        @*ovde nova stranica da se uclani*@
+        <input type="submit" value="Vec sam clan ove teretane" asp-page-handler="JesamClan" />
+        @if (Model.jesteClan)
+        {
+            <div>Unesite svoj id</div>
+            <input type="text" value="@Model.KorisnikId" />
+            <input type="submit" value="ok" asp-page-handler="PrikaziPlan" />
+            @if (Model.ok)
+            {
+                <div>@Model.Clan.id</div>
+                <div>@Model.Clan.ime</div>
+                <div>@Model.Clan.Plan</div>
+            }
+        }
+        @*ovde sam mislila da se otvori nova stranica gde ce da se prikaze njegov plan, isto kao za trenera da unese svoj id*@
+    </form>

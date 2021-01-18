@@ -2,3 +2,47 @@
 @model Baze_Teretane.Pages.TrenerModel
 @{
 }
+    <form method="post">
+        <div>
+            Unesite id trenera:
+            <input type="text" asp-for="@Model.IDTrenera" />
+        </div>
+        <br />
+        <div>
+            Svi korisnici koji saradjuju sa ovim trenerom
+            @if (@Model.trener != null)
+            {
+                foreach (Korisnik k in Model.RadiSaKorisnicima)
+                {
+                    <div>
+                        @k.ime
+                        @k.prezime
+                        @k.kilogram
+                        @k.bolesti
+                    </div>
+                    <input type="text" asp-for="@Model.preporuka" />
+                    <input type="submit" asp-page-handler="Preporuci" value="Posalji plan " />
+                    <input type="submit" asp-page-handler="ObrisiPlan" value="Obrisi prethodni plan" />
+                }
+            }
+        </div>
+        <div>
+            Prikazi sve korisnike teretane u kojoj radite
+            <input type="submit" value="Ok" asp-page-handler="SviKorisniciTeretane" />
+        </div>
+        <div>
+            Prikazi sve usluge teretane:
+        </div>
+        <div>
+            Dodaj uslugu teretani:
+        </div>
+        <div>
+            Izbrisi uslugu teretane:
+        </div>
+        <div>
+            Update uslugu teretane:
+        </div>
+        <div>
+            Ne zelim vise da saradjujem sa korisnikom :
+        </div>
+    </form>
