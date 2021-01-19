@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30711.63
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Baze_Teretane", "Baze_Teretane\Baze_Teretane.csproj", "{E08C3C7B-26F8-48FB-BC16-8F5EB31F4661}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Baze_Teretane", "Baze_Teretane\Baze_Teretane.csproj", "{E08C3C7B-26F8-48FB-BC16-8F5EB31F4661}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
