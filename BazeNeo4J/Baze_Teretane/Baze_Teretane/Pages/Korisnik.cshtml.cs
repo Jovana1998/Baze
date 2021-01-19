@@ -22,7 +22,7 @@ namespace Baze_Teretane.Pages
             client = Manager.GetClient();
             _logger = logger;
         }
-        public async Task<IActionResult> OnGetAsync()
+        public IActionResult OnGet()
         {
             Dictionary<string, object> queryDict = new Dictionary<string, object>();
 
@@ -33,7 +33,7 @@ namespace Baze_Teretane.Pages
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync()
+        public IActionResult OnPost()
         {
             Dictionary<string, object> queryDict = new Dictionary<string, object>();
 

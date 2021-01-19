@@ -29,7 +29,7 @@ namespace Baze_Teretane.Pages
             return Page();
         }
 
-        public async Task<IActionResult> OnPostDodajAsync()
+        public IActionResult OnPostDodaj()
         {
             var queryMax = new Neo4jClient.Cypher.CypherQuery("match (n:Korisnik) return MAX(n.id)",
                                              new Dictionary<string, object>(), CypherResultMode.Set);

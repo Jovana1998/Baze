@@ -51,7 +51,7 @@ namespace Baze_Teretane.Pages
             client = Manager.GetClient();
             _logger = logger;
         }
-        public async Task<IActionResult> OnGetAsync()
+        public IActionResult OnGet()
         {
             uslugaDodata = false;
             uslugaObrisana = false;
@@ -65,7 +65,7 @@ namespace Baze_Teretane.Pages
 
             return Page();
         }
-        public async Task<IActionResult> OnPostAsync()  
+        public IActionResult OnPost()  
         {
             Dictionary<string, object> queryDict = new Dictionary<string, object>();
             var query = new Neo4jClient.Cypher.CypherQuery("match(n: Trener) where n.id = '"+ IDTrenera+"' return n", queryDict, CypherResultMode.Set);
@@ -78,7 +78,7 @@ namespace Baze_Teretane.Pages
             return Page();
         }
         
-        public async Task<IActionResult> OnPostObrisiPlanAsync(string id, string idtrenera)
+        public IActionResult OnPostObrisiPlan(string id, string idtrenera)
         {
             Dictionary<string, object> queryDict = new Dictionary<string, object>();
             var query = new Neo4jClient.Cypher.CypherQuery("MATCH p=(t:Trener{id:'"+idtrenera+"'})-[r:PREPORUCUJE_PLAN]->(k:Korisnik{id:'"+id+"'}) DELETE r", queryDict, CypherResultMode.Set);
@@ -86,7 +86,7 @@ namespace Baze_Teretane.Pages
 
             return Page();
         }
-        public async Task<IActionResult> OnPostSviKorisniciTeretane()
+        public IActionResult OnPostSviKorisniciTeretane()
         {
             Dictionary<string, object> queryDict1 = new Dictionary<string, object>();
             var query1 = new Neo4jClient.Cypher.CypherQuery("MATCH p=(n)-[r:RADI_U]->(m) where n.id= '" + IDTrenera + "' RETURN m", queryDict1, CypherResultMode.Set);
@@ -98,7 +98,7 @@ namespace Baze_Teretane.Pages
 
             return Page();
         }
-        public async Task<IActionResult> OnPostSveUslugeTeretane()
+        public IActionResult OnPostSveUslugeTeretane()
         {
             Dictionary<string, object> queryDict1 = new Dictionary<string, object>();
             var query1 = new Neo4jClient.Cypher.CypherQuery("MATCH p=(n)-[r:RADI_U]->(m) where n.id= '" + IDTrenera + "' RETURN m", queryDict1, CypherResultMode.Set);
@@ -110,7 +110,7 @@ namespace Baze_Teretane.Pages
 
             return Page();
         }
-        public async Task<IActionResult> OnPostDodajUslugu()
+        public IActionResult OnPostDodajUslugu()
         {
             uslugaDodata = true;
             Dictionary<string, object> queryDict1 = new Dictionary<string, object>();
@@ -135,7 +135,7 @@ namespace Baze_Teretane.Pages
             return Page();
 
         }
-        public async Task<IActionResult> OnPostObrisiUslugu()
+        public IActionResult OnPostObrisiUslugu()
         {
             uslugaObrisana = true;
             Dictionary<string, object> queryDict1 = new Dictionary<string, object>();
@@ -159,7 +159,7 @@ namespace Baze_Teretane.Pages
             }
             return Page();
         }
-        public async Task<IActionResult> OnPostIzmeniUslugu()
+        public IActionResult OnPostIzmeniUslugu()
         {
 
             Dictionary<string, object> queryDict = new Dictionary<string, object>();
@@ -168,7 +168,7 @@ namespace Baze_Teretane.Pages
 
             return Page();
         }
-        public async Task<IActionResult> OnPostObrisiKorisnika()
+        public IActionResult OnPostObrisiKorisnika()
         {
             Dictionary<string, object> queryDict1 = new Dictionary<string, object>();
             var query1 = new Neo4jClient.Cypher.CypherQuery("MATCH p=(n)-[r:VEZBA_SA]->(m) where n.id= '" + obrisiKorisnika.id + "' RETURN n", queryDict1, CypherResultMode.Set);

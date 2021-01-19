@@ -7,6 +7,8 @@ namespace Baze_Teretane
 {
     public class Plan
     {
+        public Korisnik korisnik { get; set; }
+        public Trener trener { get; set; }
         public String id { get; set; }
         public String opisplana { get; set; }
     }

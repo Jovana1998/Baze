@@ -23,7 +23,7 @@ namespace Baze_Teretane.Pages
             _logger = logger;
         }
 
-        public async Task<IActionResult> OnGetAsync()
+        public IActionResult OnGet()
         {
             string unetNazivTeretane = "Teretana1";
 

@@ -1,0 +1,20 @@
+﻿@page
+@model Baze_Teretane.Pages.JesamClanModel
+@{
+    ViewData["Title"] = "JesamClan";
+}
+
+    <form method="post">
+        
+     
+            <div>Unesite svoj id</div>
+            <input type="text" asp-for="@Model.KorisnikId" />
+            <input type="submit" value="ok" asp-page-handler="PrikaziPlan" asp-route-teretana="@Model.ter.id" />
+            @if (@Model.ok)
+            {
+                <div>@Model.Clan.id</div>
+                <div>@Model.Clan.ime</div>
+                <div>@Model.Clan.Plan.opisplana</div>
+            }
+    
+    </form>

@@ -22,13 +22,13 @@ namespace Baze_Teretane.Pages
             client = Manager.GetClient();
             _logger = logger;
         }
-        public async Task<IActionResult> OnGetAsync()
+        public IActionResult OnGet()
         {
 
             return Page();
         }
 
-        public async Task<IActionResult> OnPostDodajAsync()
+        public IActionResult OnPostDodaj()
         {
             var queryMax = new Neo4jClient.Cypher.CypherQuery("match (n:Teretana) return MAX(n.id)",
                                              new Dictionary<string, object>(), CypherResultMode.Set);

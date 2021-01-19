@@ -35,7 +35,7 @@ namespace Baze_Teretane.Pages
             client = Manager.GetClient();
             _logger = logger;
         }
-        public async Task<IActionResult> OnGetAsync()
+        public IActionResult OnGet()
         {
             //nalazimo teretanu da bi napravili vezu od korisnika ka teretani 
             Dictionary<string, object> queryDict = new Dictionary<string, object>();
@@ -66,7 +66,7 @@ namespace Baze_Teretane.Pages
             return Page();
             return Page();
         }
-        public async Task<IActionResult> OnPostAsync(int id)
+        public IActionResult OnPost(int id)
         {
             IdTeretane = id;
             //nalazimo teretanu da bi napravili vezu od korisnika ka teretani 
@@ -97,7 +97,7 @@ namespace Baze_Teretane.Pages
             SviTreneri = ((IRawGraphClient)client).ExecuteGetCypherResults<Trener>(query3).ToList();
             return Page();
         }
-        public async Task<IActionResult> OnPostUclaniAsync(string id)
+        public  IActionResult OnPostUclani(string id)
         {
             NoviKorisnik.id = id;
             //prvo unosim podatke o korisniku u bazu 

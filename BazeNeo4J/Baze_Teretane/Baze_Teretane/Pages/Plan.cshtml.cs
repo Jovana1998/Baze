@@ -30,7 +30,7 @@ namespace Baze_Teretane.Pages
         {
 
         }
-        public async Task<IActionResult> OnPostAsync(string id, string trenerid)
+        public IActionResult OnPost(string id, string trenerid)
         {
             //ter.id = (id).ToString();
             Dictionary<string, object> queryDict = new Dictionary<string, object>();
@@ -44,13 +44,13 @@ namespace Baze_Teretane.Pages
 
             return Page();
         }
-        public async Task<IActionResult> OnPostPosaljiAsync(string id, string trenerid)
+        public IActionResult OnPostPosalji(string id, string trenerid)
         {
           
             Dictionary<string, object> queryDict = new Dictionary<string, object>();
             var query = new Neo4jClient.Cypher.CypherQuery("MATCH( t: Trener { id: '" + trenerid + "'}), (k:Korisnik {id: '" + id + "'}) WITH t, k CREATE(t)-[:PREPORUCUJE_PLAN {opisplana:'" + Preporuka + "'}]->(k) return t", queryDict, CypherResultMode.Set);
             Trener trener1 = ((IRawGraphClient)client).ExecuteGetCypherResults<Trener>(query).FirstOrDefault();
-
+            //da se vrati na prethodnu stranicu
             return Page();
         }
     }
