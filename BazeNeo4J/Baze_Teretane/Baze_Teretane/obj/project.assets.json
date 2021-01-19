@@ -6669,19 +6669,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Jovana\\.nuget\\packages\\": {}
+    "C:\\Users\\Korisnik\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jovana\\Desktop\\GIT\\Bazeoriginal\\Baze\\BazeNeo4J\\Baze_Teretane\\Baze_Teretane\\Baze_Teretane.csproj",
+      "projectUniqueName": "C:\\Users\\Korisnik\\Documents\\NBP\\Baze\\BazeNeo4J\\Baze_Teretane\\Baze_Teretane\\Baze_Teretane.csproj",
       "projectName": "Baze_Teretane",
-      "projectPath": "C:\\Users\\Jovana\\Desktop\\GIT\\Bazeoriginal\\Baze\\BazeNeo4J\\Baze_Teretane\\Baze_Teretane\\Baze_Teretane.csproj",
-      "packagesPath": "C:\\Users\\Jovana\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jovana\\Desktop\\GIT\\Bazeoriginal\\Baze\\BazeNeo4J\\Baze_Teretane\\Baze_Teretane\\obj\\",
+      "projectPath": "C:\\Users\\Korisnik\\Documents\\NBP\\Baze\\BazeNeo4J\\Baze_Teretane\\Baze_Teretane\\Baze_Teretane.csproj",
+      "packagesPath": "C:\\Users\\Korisnik\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Korisnik\\Documents\\NBP\\Baze\\BazeNeo4J\\Baze_Teretane\\Baze_Teretane\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Jovana\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Korisnik\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6693,6 +6693,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -6704,6 +6705,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
@@ -6732,7 +6734,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

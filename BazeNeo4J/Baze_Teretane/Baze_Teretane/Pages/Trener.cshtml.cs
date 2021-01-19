@@ -26,6 +26,22 @@ namespace Baze_Teretane.Pages
         public int idKorisnika { get; set; }
         [BindProperty]
         public List<Korisnik> RadiSaKorisnicima { get; set; }
+        public List<Usluga> usluge { get; set; }
+        public Teretana teretana { get; set; }
+        [BindProperty]
+        public Usluga novaUsluga { get; set; }
+        [BindProperty]
+        public string uslugaNova { get; set; }
+        [BindProperty]
+        public int IdobrisiUslugu { get; set; }
+        public List<Korisnik> korisnici { get; set; }
+        public Usluga uslugaObrisi { get; set; }
+        [BindProperty]
+        public Usluga updateUsluga { get; set; }
+        [BindProperty]
+        public Korisnik obrisiKorisnika { get; set; }
+        [BindProperty]
+        public string poruka { get; set; }
         public TrenerModel(ILogger<TrenerModel> logger)
         {
             client = Manager.GetClient();
@@ -69,6 +85,106 @@ namespace Baze_Teretane.Pages
             Dictionary<string, object> queryDict = new Dictionary<string, object>();
             var query = new Neo4jClient.Cypher.CypherQuery("MATCH p=(t:Trener{id:'"+trener.id+"'})-[r:PREPORUCUJE_PLAN]->(k:Korisnik{id:'"+idKorisnika+"'}) DELETE r", queryDict, CypherResultMode.Set);
             Trener trener1 = ((IRawGraphClient)client).ExecuteGetCypherResults<Trener>(query).FirstOrDefault();
+
+            return Page();
+        }
+        public async Task<IActionResult> OnPostSviKorisniciTeretane()
+        {
+            Dictionary<string, object> queryDict1 = new Dictionary<string, object>();
+            var query1 = new Neo4jClient.Cypher.CypherQuery("MATCH p=(n)-[r:RADI_U]->(m) where n.id= '" + IDTrenera + "' RETURN m", queryDict1, CypherResultMode.Set);
+            teretana = ((IRawGraphClient)client).ExecuteGetCypherResults<Teretana>(query1).FirstOrDefault();
+
+            Dictionary<string, object> queryDict2 = new Dictionary<string, object>();
+            var query2 = new Neo4jClient.Cypher.CypherQuery("MATCH p=(n)-[r:CLAN]->(m) where m.id= '" + teretana.id + "' RETURN n", queryDict2, CypherResultMode.Set);
+            korisnici = ((IRawGraphClient)client).ExecuteGetCypherResults<Korisnik>(query2).ToList();
+
+            return Page();
+        }
+        public async Task<IActionResult> OnPostSveUslugeTeretane()
+        {
+            Dictionary<string, object> queryDict1 = new Dictionary<string, object>();
+            var query1 = new Neo4jClient.Cypher.CypherQuery("MATCH p=(n)-[r:RADI_U]->(m) where n.id= '" + IDTrenera + "' RETURN m", queryDict1, CypherResultMode.Set);
+            teretana = ((IRawGraphClient)client).ExecuteGetCypherResults<Teretana>(query1).FirstOrDefault();
+
+            Dictionary<string, object> queryDict2 = new Dictionary<string, object>();
+            var query2 = new Neo4jClient.Cypher.CypherQuery("MATCH p=(n)-[r:NUDI_USLUGU]->(m) where n.id= '" + teretana.id + "' RETURN m", queryDict2, CypherResultMode.Set);
+            usluge = ((IRawGraphClient)client).ExecuteGetCypherResults<Usluga>(query2).ToList();
+
+            return Page();
+        }
+        public async Task<IActionResult> OnPostDodajUslugu()
+        {
+            Dictionary<string, object> queryDict1 = new Dictionary<string, object>();
+            var query1 = new Neo4jClient.Cypher.CypherQuery("MATCH p=(n)-[r:RADI_U]->(m) where n.id= '" + IDTrenera + "' RETURN m", queryDict1, CypherResultMode.Set);
+            teretana = ((IRawGraphClient)client).ExecuteGetCypherResults<Teretana>(query1).FirstOrDefault();
+
+            var queryMax = new Neo4jClient.Cypher.CypherQuery("match (n:Usluga) return MAX(n.id)",
+                                             new Dictionary<string, object>(), CypherResultMode.Set);
+            String maxId = ((IRawGraphClient)client).ExecuteGetCypherResults<String>(queryMax).ToList().FirstOrDefault();
+
+            int pom = Int32.Parse(maxId);
+            pom++;
+            novaUsluga.id = pom.ToString();
+            //novaUsluga.nazivusluge = naziv;
+            Dictionary<string, object> queryDict2 = new Dictionary<string, object>();
+            var query2 = new Neo4jClient.Cypher.CypherQuery("CREATE (u:Usluga{id:'" + novaUsluga.id + "',nazivusluge:'" + novaUsluga.nazivusluge + "'}) return u", queryDict2, CypherResultMode.Set);
+            Usluga korisnik = ((IRawGraphClient)client).ExecuteGetCypherResults<Usluga>(query2).FirstOrDefault();
+
+            Dictionary<string, object> queryDict3 = new Dictionary<string, object>();
+            var query3 = new Neo4jClient.Cypher.CypherQuery("MATCH(a: Teretana), (b: Usluga) WHERE a.id = '" + teretana.id + "' AND b.id = '" + novaUsluga.id + "' CREATE(a) -[r: NUDI_USLUGU]->(b) RETURN b", queryDict3, CypherResultMode.Set);
+            Usluga k = ((IRawGraphClient)client).ExecuteGetCypherResults<Usluga>(query3).FirstOrDefault();
+            return Page();
+
+        }
+        public async Task<IActionResult> OnPostObrisiUslugu()
+        {
+            Dictionary<string, object> queryDict1 = new Dictionary<string, object>();
+            var query1 = new Neo4jClient.Cypher.CypherQuery("MATCH p=(n)-[r:RADI_U]->(m) where n.id= '" + IDTrenera + "' RETURN m", queryDict1, CypherResultMode.Set);
+            teretana = ((IRawGraphClient)client).ExecuteGetCypherResults<Teretana>(query1).FirstOrDefault();
+
+            Dictionary<string, object> queryDict = new Dictionary<string, object>();
+            var query = new Neo4jClient.Cypher.CypherQuery("match(n: Usluga) where n.id = '" + IdobrisiUslugu + "' return n", queryDict, CypherResultMode.Set);
+            uslugaObrisi = ((IRawGraphClient)client).ExecuteGetCypherResults<Usluga>(query).FirstOrDefault();
+
+            if (uslugaObrisi != null)
+            {
+                Dictionary<string, object> queryDict2 = new Dictionary<string, object>();
+                var query2 = new Neo4jClient.Cypher.CypherQuery("MATCH (n:Teretana)-[r]->(m:Usluga) WHERE m.id = '" + uslugaObrisi.id + "' DELETE r", queryDict2, CypherResultMode.Set);
+                Usluga korisnik = ((IRawGraphClient)client).ExecuteGetCypherResults<Usluga>(query2).FirstOrDefault();
+
+                Dictionary<string, object> queryDict3 = new Dictionary<string, object>();
+                var query3 = new Neo4jClient.Cypher.CypherQuery("MATCH (n:Usluga) WHERE n.id = '" + uslugaObrisi.id + "' DELETE n", queryDict3, CypherResultMode.Set);
+                Usluga k = ((IRawGraphClient)client).ExecuteGetCypherResults<Usluga>(query3).FirstOrDefault();
+
+            }
+            return Page();
+        }
+        public async Task<IActionResult> OnPostIzmeniUslugu()
+        {
+
+            Dictionary<string, object> queryDict = new Dictionary<string, object>();
+            var query = new Neo4jClient.Cypher.CypherQuery("match (n:Usluga) where n.id='" + updateUsluga.id + "' set n.nazivusluge='" + updateUsluga.nazivusluge + "' return n", queryDict, CypherResultMode.Set);
+            uslugaObrisi = ((IRawGraphClient)client).ExecuteGetCypherResults<Usluga>(query).FirstOrDefault();
+
+            return Page();
+        }
+        public async Task<IActionResult> OnPostObrisiKorisnika()
+        {
+            Dictionary<string, object> queryDict1 = new Dictionary<string, object>();
+            var query1 = new Neo4jClient.Cypher.CypherQuery("MATCH p=(n)-[r:VEZBA_SA]->(m) where n.id= '" + obrisiKorisnika.id + "' RETURN n", queryDict1, CypherResultMode.Set);
+            Korisnik k = ((IRawGraphClient)client).ExecuteGetCypherResults<Korisnik>(query1).FirstOrDefault();
+
+            if (k == null || IDTrenera == null)
+            {
+                poruka = "Izabrani id ne pripada Vasem korisniku, nije moguce izvrsiti brisanje!";
+                return Page();
+            }
+
+
+            Dictionary<string, object> queryDict3 = new Dictionary<string, object>();
+            var query3 = new Neo4jClient.Cypher.CypherQuery("MATCH (n:Korisnik) where n.id='" + obrisiKorisnika.id + "' DETACH DELETE n", queryDict3, CypherResultMode.Set);
+            korisnici = ((IRawGraphClient)client).ExecuteGetCypherResults<Korisnik>(query3).ToList();
+            poruka = "Korisnik je obrisan!";
 
             return Page();
         }

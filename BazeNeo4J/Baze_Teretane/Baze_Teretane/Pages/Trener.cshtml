@@ -2,51 +2,112 @@
 @model Baze_Teretane.Pages.TrenerModel
 @{
 }
-    <form method="post">
-        <div>
-            Unesite id trenera:
-            <input type="text" asp-for="@Model.IDTrenera" />
-        </div>
-        <br />
-        <div>
-            Svi korisnici koji saradjuju sa ovim trenerom
-            @if (@Model.trener != null)
+<form method="post">
+    <div>
+        Unesite id trenera:
+        <input type="text" asp-for="@Model.IDTrenera" />
+        <input type="submit" value="Uloguj se" />
+    </div>
+    <br />
+    <div>
+        Svi korisnici koji saradjuju sa ovim trenerom
+        @if (@Model.trener != null)
+        {
+            foreach (Korisnik k in Model.RadiSaKorisnicima)
             {
-                foreach (Korisnik k in Model.RadiSaKorisnicima)
+                <div>
+                    @k.ime
+                    @k.prezime
+                    @k.kilogram
+                    @k.bolesti
+                    @k.id
+                </div>
+                <input type="text" name="tekst" asp-for="@Model.preporuka" />
+                <input type="hidden" name="idk" value="@k.id">
+                <input type="submit" asp-page-handler="Preporuci" value="Posalji plan " />
+
+                <input type="submit" asp-page-handler="ObrisiPlan" value="Obrisi plan" />
+                //ovde prosledimo id korisnika da bi nasli vezu i da je obrisemo
+            }
+        }
+    </div>
+    <br />
+    <br />
+    <div>
+        Prikazi sve korisnike teretane u kojoj radite
+        <input type="submit" value="Prikazi" asp-page-handler="SviKorisniciTeretane" />
+        @if (Model.IDTrenera != null)
+            @if (@Model.korisnici != null)
+            {
+                foreach (Korisnik k in Model.korisnici)
                 {
                     <div>
                         @k.ime
                         @k.prezime
                         @k.kilogram
                         @k.bolesti
-                        @k.id
                     </div>
-                    <input type="text" name="tekst" asp-for="@Model.preporuka" />
-                    <input type="hidden" name="idk" value="@k.id">
-                    <input type="submit" asp-page-handler="Preporuci" value="Posalji plan " />
-
-                    <input type="submit" asp-page-handler="ObrisiPlan" value="Obrisi plan"  />
-                    //ovde prosledimo id korisnika da bi nasli vezu i da je obrisemo
                 }
+                <br />
             }
+
         </div>
+    <br />
+    <br />
         <div>
-            Prikazi sve korisnike teretane u kojoj radite
-            <input type="submit" value="Ok" asp-page-handler="SviKorisniciTeretane" />
-        </div>
-        <div>
-            Prikazi sve usluge teretane:
-        </div>
-        <div>
-            Dodaj uslugu teretani:
-        </div>
-        <div>
-            Izbrisi uslugu teretane:
-        </div>
-        <div>
-            Update uslugu teretane:
-        </div>
-        <div>
-            Ne zelim vise da saradjujem sa korisnikom :
-        </div>
-    </form>
+            Prikazi sve usluge teretane
+            <input type="submit" value="Prikazi" asp-page-handler="SveUslugeTeretane" />
+            @if (Model.IDTrenera != null)
+                @if (@Model.usluge != null)
+                {
+                    foreach (Usluga u in Model.usluge)
+                    {
+                        <div>
+                            @u.nazivusluge
+                        </div>
+                    }
+                    <br />
+                }
+
+            </div>
+    <br />
+    <br />
+            <div>
+                Dodaj uslugu teretani:
+                <input type="text" asp-for="@Model.novaUsluga.nazivusluge" />
+                <input type="submit" value="Dodaj" asp-page-handler="DodajUslugu" />
+                @if (Model.IDTrenera != null)
+                    @if (@Model.teretana != null)
+                    {
+                        <div>Usluga je dodata!</div>
+                    }
+                </div>
+    <br />
+    <br />
+                <div>
+                    Obrisi uslugu teretane:
+                    <input type="number" asp-for="@Model.IdobrisiUslugu" />
+                    <input type="submit" value="Obrisi" asp-page-handler="ObrisiUslugu" />
+                    @if (Model.IDTrenera != null)
+                        @if (@Model.teretana != null)
+                        {
+                            <div>Usluga je obrisana!</div>
+                        }
+                    </div>
+    <br />
+    <br />
+                    <div>
+                        Update uslugu teretane:
+                        <div>Unesite id usluge:</div><input type="text" asp-for="@Model.updateUsluga.id" />
+                        <div>Unesite izmenu usluge:</div><input type="text" asp-for="@Model.updateUsluga.nazivusluge" />
+                        <input type="submit" value="Izmeni" asp-page-handler="IzmeniUslugu" />
+                    </div>
+    <br />
+    <br />
+                    <div>
+                        Brisanje korisnika sa kojima radite:
+                        <div>Unesite id korisnika:</div><input type="text" asp-for="@Model.obrisiKorisnika.id" />
+                        <input type="submit" value="Obrisi" asp-page-handler="ObrisiKorisnika" />
+                        <div>@Model.poruka</div>
+                    </div>
+                </form>
