@@ -77,19 +77,11 @@ namespace Baze_Teretane.Pages
 
             return Page();
         }
-        public async Task<IActionResult> OnPostPreporuciAsync(int idk)
-        {
-            int a = idk;
-            Dictionary<string, object> queryDict = new Dictionary<string, object>();
-            var query = new Neo4jClient.Cypher.CypherQuery("MATCH( t: Trener { id: '"+IDTrenera+"'}), (k:Korisnik {id: '"+idk+"'}) WITH t, k CREATE(t)-[:PREPORUCUJE_PLAN {opisplana:'"+preporuka+"'}]->(k) return t", queryDict, CypherResultMode.Set);
-           Trener trener1 = ((IRawGraphClient)client).ExecuteGetCypherResults<Trener>(query).FirstOrDefault();
-
-            return Page();
-        }
-        public async Task<IActionResult> OnPostObrisiPlanAsync(int idKorisnika)
+        
+        public async Task<IActionResult> OnPostObrisiPlanAsync(string id, string idtrenera)
         {
             Dictionary<string, object> queryDict = new Dictionary<string, object>();
-            var query = new Neo4jClient.Cypher.CypherQuery("MATCH p=(t:Trener{id:'"+trener.id+"'})-[r:PREPORUCUJE_PLAN]->(k:Korisnik{id:'"+idKorisnika+"'}) DELETE r", queryDict, CypherResultMode.Set);
+            var query = new Neo4jClient.Cypher.CypherQuery("MATCH p=(t:Trener{id:'"+idtrenera+"'})-[r:PREPORUCUJE_PLAN]->(k:Korisnik{id:'"+id+"'}) DELETE r", queryDict, CypherResultMode.Set);
             Trener trener1 = ((IRawGraphClient)client).ExecuteGetCypherResults<Trener>(query).FirstOrDefault();
 
             return Page();

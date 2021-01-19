@@ -97,22 +97,23 @@ namespace Baze_Teretane.Pages
             SviTreneri = ((IRawGraphClient)client).ExecuteGetCypherResults<Trener>(query3).ToList();
             return Page();
         }
-        public async Task<IActionResult> OnPostUclaniAsync()
-        { //prvo unosim podatke o korisniku u bazu 
-            NoviKorisnik.id = IdNovogKorisnika.ToString();
+        public async Task<IActionResult> OnPostUclaniAsync(string id)
+        {
+            NoviKorisnik.id = id;
+            //prvo unosim podatke o korisniku u bazu 
             Dictionary<string, object> queryDict = new Dictionary<string, object>();
-            var query = new Neo4jClient.Cypher.CypherQuery("MATCH(n: Korisnik { id: '" + NoviKorisnik.id + "' })" +
+            var query = new Neo4jClient.Cypher.CypherQuery("CREATE(n: Korisnik { id: '" + NoviKorisnik.id + "' })" +
                 " SET n.ime = '" + NoviKorisnik.ime + "', n.prezime = '" + NoviKorisnik.prezime + "', n.kilogram='" + NoviKorisnik.kilogram + "', n.visina= '" + NoviKorisnik.visina + "', n.bolesti= '" + NoviKorisnik.bolesti + "', n.pol= '" + NoviKorisnik.pol + "'  " +
                 "RETURN n", queryDict, CypherResultMode.Set);
             Korisnik korisnik = ((IRawGraphClient)client).ExecuteGetCypherResults<Korisnik>(query).FirstOrDefault();
 
             //izabrani trener veza sa korisnikom
             Dictionary<string, object> queryDict1 = new Dictionary<string, object>();
-            var query1 = new Neo4jClient.Cypher.CypherQuery("MATCH(k: Korisnik { id: '"+NoviKorisnik.id+"'}), (t: Trener { id: '"+idTrenera+"'}) WITH k, t CREATE(k) -[:VEZBA_SA]->(t) return k", queryDict1, CypherResultMode.Set);
+            var query1 = new Neo4jClient.Cypher.CypherQuery("MATCH(k: Korisnik { id: '" + NoviKorisnik.id + "'}), (t: Trener { id: '" + idTrenera + "'}) WITH k, t CREATE(k) -[:VEZBA_SA]->(t) return k", queryDict1, CypherResultMode.Set);
             Korisnik k = ((IRawGraphClient)client).ExecuteGetCypherResults<Korisnik>(query1).FirstOrDefault();
             //veza usluga korisnik
             Dictionary<string, object> queryDict2 = new Dictionary<string, object>();
-            var query2 = new Neo4jClient.Cypher.CypherQuery("MATCH (k:Korisnik {id: '"+NoviKorisnik.id+"'}), (u:Usluga {id: '"+idUsluge+"'}) WITH k, u CREATE (k)-[:KORISTI]->(u) return k", queryDict2, CypherResultMode.Set);
+            var query2 = new Neo4jClient.Cypher.CypherQuery("MATCH (k:Korisnik {id: '" + NoviKorisnik.id + "'}), (u:Usluga {id: '" + idUsluge + "'}) WITH k, u CREATE (k)-[:KORISTI]->(u) return k", queryDict2, CypherResultMode.Set);
             Korisnik a = ((IRawGraphClient)client).ExecuteGetCypherResults<Korisnik>(query2).FirstOrDefault();
             uspesno = true;
 

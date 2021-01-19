@@ -28,7 +28,7 @@
                 <option value="@u.id">@u.ime  @u.prezime</option>
             }
         </select>
-       <div>Unesite koju uslugu zelite</div>
+        <div>Unesite koju uslugu zelite</div>
         <select asp-for="@Model.idUsluge">
             @foreach (Usluga u in Model.SveUsluge)
             {
@@ -37,13 +37,14 @@
         </select>
         <div>Ovde unesite ukoliko imate neku hronicnu bolest:</div>
         <input type="text" asp-for="@Model.NoviKorisnik.bolesti" />
-        <input type="submit" value="Uclani se" asp-page-handler="Uclani" />
+        <input type="submit" value="Uclani se" asp-page-handler="Uclani" asp-route-id="@Model.NoviKorisnik.id" />
         @if (Model.uspesno)
         {
             <div>
                 Uskoro cete dobiti povratne informacije o programu treninga koji Vam izabrani trener preporucuje!
                 Vas id kojim mozete pristupiti planu je: @Model.NoviKorisnik.id
             </div>
+            <input type="submit" value="Nazad" asp-page="./Korisnik" />
         }
     </form>
 
