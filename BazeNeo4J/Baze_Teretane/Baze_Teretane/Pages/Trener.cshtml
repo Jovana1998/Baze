@@ -19,10 +19,13 @@
                         @k.prezime
                         @k.kilogram
                         @k.bolesti
+                        @k.id
                     </div>
-                    <input type="text" asp-for="@Model.preporuka" />
+                    <input type="text" name="tekst" asp-for="@Model.preporuka" />
+                    <input type="hidden" name="idk" value="@k.id">
                     <input type="submit" asp-page-handler="Preporuci" value="Posalji plan " />
-                    <input type="submit" asp-page-handler="ObrisiPlan" value="Obrisi prethodni plan" asp-route-id="@k.id" />
+
+                    <input type="submit" asp-page-handler="ObrisiPlan" value="Obrisi plan"  />
                     //ovde prosledimo id korisnika da bi nasli vezu i da je obrisemo
                 }
             }

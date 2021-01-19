@@ -6,15 +6,15 @@
 
     <form method="post">
         <div>Ime:</div>
-        <input type="text" value="@Model.NoviKorisnik.ime" />
+        <input type="text" asp-for="@Model.NoviKorisnik.ime" />
         <div>Prezime:</div>
-        <input type="text" value="@Model.NoviKorisnik.prezime" />
+        <input type="text" asp-for="@Model.NoviKorisnik.prezime" />
         <div>Pol:</div>
-        <input type="text" value="@Model.NoviKorisnik.pol" />
+        <input type="text" asp-for="@Model.NoviKorisnik.pol" />
         <div>Kilogrami:</div>
-        <input type="text" value="@Model.NoviKorisnik.kilogram" />
+        <input type="text" asp-for="@Model.NoviKorisnik.kilogram" />
         <div>Visina:</div>
-        <input type="text" value="@Model.NoviKorisnik.visina" />
+        <input type="text" asp-for="@Model.NoviKorisnik.visina" />
         <div>Da li ste ranije trenirali:</div>
         <select>
             <option value="1">Nisam nikada trenirao/la</option>
@@ -36,7 +36,14 @@
             }
         </select>
         <div>Ovde unesite ukoliko imate neku hronicnu bolest:</div>
-        <input type="text" value="@Model.NoviKorisnik.bolesti" />
+        <input type="text" asp-for="@Model.NoviKorisnik.bolesti" />
         <input type="submit" value="Uclani se" asp-page-handler="Uclani" />
+        @if (Model.uspesno)
+        {
+            <div>
+                Uskoro cete dobiti povratne informacije o programu treninga koji Vam izabrani trener preporucuje!
+                Vas id kojim mozete pristupiti planu je: @Model.NoviKorisnik.id
+            </div>
+        }
     </form>
 
