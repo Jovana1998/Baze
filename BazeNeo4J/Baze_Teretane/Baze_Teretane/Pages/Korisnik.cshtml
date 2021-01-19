@@ -6,11 +6,13 @@
 <form method="post">
     @foreach (Teretana k in Model.SveTeretane)
     {
-        <p>@k.naziv</p>
-        <p>@k.lokacija</p>
-        <p>@k.cena</p>
+        <div class="font-weight-bold"><p>@k.naziv</p></div>
+        <p>Adresa: @k.lokacija</p>
+        <p>Cena: @k.cena</p>
         <div>
             <input type="submit" value="Pogledaj detaljnije informacije o teretani" asp-page="./PrikazTeretane" asp-route-id="@k.id" />
         </div>
+        <br />
+        <br />
     }
 </form>

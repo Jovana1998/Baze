@@ -354,3 +354,4 @@ D:\NBP\Baze\BazeNeo4J\Baze_Teretane\Baze_Teretane\obj\Debug\netcoreapp3.1\Baze_T
 D:\NBP\Baze\BazeNeo4J\Baze_Teretane\Baze_Teretane\obj\Debug\netcoreapp3.1\Baze_Teretane.pdb
 D:\NBP\Baze\BazeNeo4J\Baze_Teretane\Baze_Teretane\obj\Debug\netcoreapp3.1\Baze_Teretane.genruntimeconfig.cache
 D:\NBP\Baze\BazeNeo4J\Baze_Teretane\Baze_Teretane\obj\Debug\netcoreapp3.1\Razor\Pages\DodajTrenera.cshtml.g.cs
+C:\Users\Korisnik\Documents\NBP\Baze\BazeNeo4J\Baze_Teretane\Baze_Teretane\obj\Debug\netcoreapp3.1\Razor\Pages\DodajTrenera.cshtml.g.cs
