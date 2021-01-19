@@ -14,7 +14,9 @@ namespace Baze_Teretane.Pages
     {
         private readonly ILogger<UclaniSeModel> _logger;
         BoltGraphClient client;
+        [BindProperty]
         public int IdTeretane { get; set; }
+        [BindProperty]
         public int IdNovogKorisnika { get; set; }
         [BindProperty]
         public Korisnik NoviKorisnik { get; set; }
@@ -45,7 +47,7 @@ namespace Baze_Teretane.Pages
             String maxId = ((IRawGraphClient)client).ExecuteGetCypherResults<String>(queryMax).ToList().FirstOrDefault();
             //povecavamo za jedan i dodeljujemo novom korisniku 
             int pom = Int32.Parse(maxId);
-            IdNovogKorisnika = pom++;
+            pom++;
             NoviKorisnik.id = pom.ToString();
             //Pravimo vezu o korisnika ka teretani 
             Dictionary<string, object> queryDict1 = new Dictionary<string, object>();

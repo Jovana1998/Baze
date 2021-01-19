@@ -4,37 +4,45 @@
     ViewData["Title"] = "PrikazTeretane";
 }
 
-    <form method="post">
-        <div>Svi treneri </div>
-        @foreach (Trener k in Model.SviTreneri)
+<form method="post">
+
+    <div>
+        <div>Teretana @Model.ter.naziv</div>
+        <div>Unesite ocenu:</div><input type="text" asp-for="@Model.teretanaOcena.ocena" />
+        <input type="submit" value="Oceni" asp-page-handler="OceniTeretanu" asp-route-id="@Model.ter.id" />
+    </div>
+
+    <div>Svi treneri </div>
+    @foreach (Trener k in @Model.SviTreneri)
+    {
+        <p>@k.ime</p>
+        <p>@k.prezime</p>
+        <p>@k.ocena</p>
+        <div>Unesite ocenu:</div><input type="text" asp-for="@Model.trenerOcena.ocena" />
+        <input type="submit" value="Oceni" asp-page-handler="OceniTrenera" asp-route-id="@k.id" />
+    }
+    <div>Sve usluge</div>
+    @foreach (Usluga a in @Model.SveUsluge)
+    {
+        <p>@a.nazivusluge</p>
+        <p>@a.id</p>
+
+
+    }
+    <input type="submit" value="Zelim da se uclanim u ovu teretanu" asp-page="./UclaniSe" asp-route-id="@Model.ter.id" />
+    @*ovde nova stranica da se uclani*@
+    <input type="submit" value="Vec sam clan ove teretane" asp-page-handler="JesamClan" />
+    @if (@Model.jesteClan)
+    {
+        <div>Unesite svoj id</div>
+        <input type="text" value="@Model.KorisnikId" />
+        <input type="submit" value="ok" asp-page-handler="PrikaziPlan" />
+        @if (@Model.ok)
         {
-            <p>@k.ime</p>
-            <p>@k.prezime</p>
-            <p>@k.ocena</p>
-
+            <div>@Model.Clan.id</div>
+            <div>@Model.Clan.ime</div>
+            <div>@Model.Clan.Plan</div>
         }
-        <div>Sve usluge</div>
-        @foreach (Usluga a in Model.SveUsluge)
-        {
-            <p>@a.nazivusluge</p>
-            <p>@a.id</p>
+    }
 
-
-        }
-        <input type="submit" value="Zelim da se uclanim u ovu teretanu" asp-page="./UclaniSe" asp-route-id="@Model.ter.id" />
-        @*ovde nova stranica da se uclani*@
-        <input type="submit" value="Vec sam clan ove teretane" asp-page-handler="JesamClan" />
-        @if (Model.jesteClan)
-        {
-            <div>Unesite svoj id</div>
-            <input type="text" value="@Model.KorisnikId" />
-            <input type="submit" value="ok" asp-page-handler="PrikaziPlan" />
-            @if (Model.ok)
-            {
-                <div>@Model.Clan.id</div>
-                <div>@Model.Clan.ime</div>
-                <div>@Model.Clan.Plan</div>
-            }
-        }
-
-    </form>
+</form>
