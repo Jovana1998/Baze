@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Korisnik\\Documents\\NBP\\Baze\\BazeNeo4J\\Baze_Teretane\\Baze_Teretane\\Baze_Teretane.csproj": {}
+    "D:\\NBP\\Baze\\BazeNeo4J\\Baze_Teretane\\Baze_Teretane\\Baze_Teretane.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Korisnik\\Documents\\NBP\\Baze\\BazeNeo4J\\Baze_Teretane\\Baze_Teretane\\Baze_Teretane.csproj": {
+    "D:\\NBP\\Baze\\BazeNeo4J\\Baze_Teretane\\Baze_Teretane\\Baze_Teretane.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Korisnik\\Documents\\NBP\\Baze\\BazeNeo4J\\Baze_Teretane\\Baze_Teretane\\Baze_Teretane.csproj",
+        "projectUniqueName": "D:\\NBP\\Baze\\BazeNeo4J\\Baze_Teretane\\Baze_Teretane\\Baze_Teretane.csproj",
         "projectName": "Baze_Teretane",
-        "projectPath": "C:\\Users\\Korisnik\\Documents\\NBP\\Baze\\BazeNeo4J\\Baze_Teretane\\Baze_Teretane\\Baze_Teretane.csproj",
-        "packagesPath": "C:\\Users\\Korisnik\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Korisnik\\Documents\\NBP\\Baze\\BazeNeo4J\\Baze_Teretane\\Baze_Teretane\\obj\\",
+        "projectPath": "D:\\NBP\\Baze\\BazeNeo4J\\Baze_Teretane\\Baze_Teretane\\Baze_Teretane.csproj",
+        "packagesPath": "C:\\Users\\arsic\\.nuget\\packages\\",
+        "outputPath": "D:\\NBP\\Baze\\BazeNeo4J\\Baze_Teretane\\Baze_Teretane\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Korisnik\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\arsic\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

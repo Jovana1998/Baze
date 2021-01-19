@@ -47,7 +47,7 @@ namespace Baze_Teretane.Pages
 
 
 
-            return Page();
+            return RedirectToPage("./Admin");
         }
     }
 }
