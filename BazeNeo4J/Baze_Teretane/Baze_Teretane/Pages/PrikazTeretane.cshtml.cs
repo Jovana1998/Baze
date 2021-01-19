@@ -119,7 +119,7 @@ namespace Baze_Teretane.Pages
             trenerOcena = ((IRawGraphClient)client).ExecuteGetCypherResults<Trener>(query1).FirstOrDefault();
 
 
-            return Page();
+            return RedirectToPage("./Korisnik");
         }
 
         public async Task<IActionResult> OnPostOceniTeretanu(int id)
@@ -142,7 +142,10 @@ namespace Baze_Teretane.Pages
             teretanaOcena = ((IRawGraphClient)client).ExecuteGetCypherResults<Teretana>(query1).FirstOrDefault();
 
 
-            return Page();
+            return RedirectToPage("./Korisnik");
         }
     }
-}
+
+        
+    }
+
