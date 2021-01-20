@@ -16,9 +16,9 @@
         <div>Visina:</div>
         <input type="text" asp-for="@Model.NoviKorisnik.visina" />
         <div>Da li ste ranije trenirali:</div>
-        <select>
-            <option value="1">Nisam nikada trenirao/la</option>
-            <option value="2">Umereno sam trenirao/la</option>
+        <select asp-for="@Model.NoviKorisnik.nivo">
+            <option value="0">Nisam nikada trenirao/la</option>
+            <option value="1">Umereno sam trenirao/la</option>
             <option value="3">Redovno sam trenirao/la</option>
         </select>
         <div>Unesite trenera sa kojim zelite da radite :</div>
@@ -37,7 +37,7 @@
         </select>
         <div>Ovde unesite ukoliko imate neku hronicnu bolest:</div>
         <input type="text" asp-for="@Model.NoviKorisnik.bolesti" />
-        <input type="submit" value="Uclani se" asp-page-handler="Uclani" asp-route-id="@Model.NoviKorisnik.id" />
+        <input type="submit" value="Uclani se" asp-page-handler="Uclani" asp-route-id="@Model.IdTeretane" />
         @if (Model.uspesno)
         {
             <div>
