@@ -29,7 +29,7 @@ namespace WindowsFormsSat
         {
             Sat s = DataProvider.VratiSat(1);
 
-            MessageBox.Show(s.brend);
+            MessageBox.Show( s.idsata+s.brend + s.cena+ s.materijal);
         }
 
         private void Azuriraj_Sat_Click(object sender, EventArgs e)
@@ -77,7 +77,7 @@ namespace WindowsFormsSat
         {
             List<ListaOmiljenih> satovi = DataProvider.ListaOmiljenih(1);
             foreach (ListaOmiljenih s in satovi)
-                MessageBox.Show(s.satid.ToString());
+                MessageBox.Show("ID sata: "+s.satid.ToString()+", ID korisnika: "+s.korisnikid);
         }
 
         private void Dodaj_Komentar_Click(object sender, EventArgs e)
@@ -89,13 +89,13 @@ namespace WindowsFormsSat
         private void Izbrisi_Komentar_Click(object sender, EventArgs e)
         {
             DataProvider.ObrisiKomentar(1, 1);
-            MessageBox.Show("Komentar je obrisan!");
+            MessageBox.Show("Komentar 1 je obrisan!"); 
         }
 
         private void Azuriraj_Komentar_Click(object sender, EventArgs e)
         {
             DataProvider.AzurirajKomentar(1, 1);
-            MessageBox.Show("Komentar je azuriran!");
+            MessageBox.Show("Komentar 1 je azuriran!");
         }
 
         private void Ucitaj_Komentar_Click(object sender, EventArgs e)
@@ -109,7 +109,7 @@ namespace WindowsFormsSat
             List<Komentar> kom = DataProvider.VratiSveKomentare();
 
             foreach (Komentar k in kom)
-                MessageBox.Show(k.tekstkomentara);
+                MessageBox.Show("Id komentara: " k.idkomentara+", komentar: "+k.tekstkomentara);
         }
 
         private void Dodaj_Narudzbinu_Click(object sender, EventArgs e)
@@ -121,7 +121,7 @@ namespace WindowsFormsSat
         private void Azuriraj_Narudzbinu_Click(object sender, EventArgs e)
         {
             DataProvider.AzurirajNarudzbinu(1);
-            MessageBox.Show("Narudzbina azurirana!");
+            MessageBox.Show("Narudzbina 1 azurirana!");
         }
 
         private void Izbrisi_Narudzbinu_Click(object sender, EventArgs e)
@@ -186,6 +186,11 @@ namespace WindowsFormsSat
 
             foreach (Korisnik k in nar)
                 MessageBox.Show(k.ime + " " + k.prezime);
+        }
+
+        private void Korisnik_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

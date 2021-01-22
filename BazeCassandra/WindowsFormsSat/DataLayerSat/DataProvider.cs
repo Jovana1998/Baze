@@ -371,7 +371,7 @@ namespace DataLayerSat
             if (session == null)
                 return;
 
-            RowSet narData = session.Execute("insert into \"ListaOmiljenih2\" (korisnikid, satid) values ("+korisnikid+", "+satid+")");
+            RowSet narData = session.Execute("insert into \"ListaOmiljenih\" (korisnikid, satid) values ("+korisnikid+", "+satid+")");
 
         }
         public static void IzbrisiIzListeOmiljenih(int idkorisnika, int idsata)
